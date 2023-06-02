@@ -71,8 +71,6 @@ export default function Simple() {
               display={{ base: "none", md: "flex" }}
             >
               {linksData.map(link => (
-                link.name === "Home" ?
-                <HomeButton key={link.name} href={link.href}>{link.name}</HomeButton> :
                 <NavLink key={link.name} href={link.href}>{link.name}</NavLink>
               ))}
               <Menu>
@@ -108,12 +106,8 @@ export default function Simple() {
 
         {isOpen ? (
           <Box pb={4} display={{ md: "none" }}>
-
-
             <Stack as={"nav"} spacing={4}>
               {linksData.map(link => (
-                link.name === "Home" ?
-                <HomeButton key={link.name} href={link.href}>{link.name}</HomeButton> :
                 <NavLink key={link.name} href={link.href}>{link.name}</NavLink>
               ))}
               <Menu>
@@ -132,3 +126,4 @@ export default function Simple() {
     </>
   );
 }
+
