@@ -46,7 +46,7 @@ export default function Simple() {
 
   const HomeButton = ({ children, href }) => {
     const path = window.location.pathname;
-    return path === "/SecondPage" || path === "/team" || path === "/ThirdPage" ? (
+    return path === "/SecondPage" || path === "/ForthPage" || path === "/ThirdPage" ? (
       <NavLink children={children} href={href} />
     ) : null;
   };
