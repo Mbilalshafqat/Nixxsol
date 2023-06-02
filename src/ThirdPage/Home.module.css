@@ -1,0 +1,19 @@
+.section1{
+    background-color: #191919;
+    height: fit-content;
+    padding: 7%;
+}
+.section2{
+    height: fit-content;
+    padding: 5%;
+}
+.section3{
+    height:fit-content;
+    background: rgb(25,10,5);
+background: linear-gradient(90deg, rgba(25,10,5,1) 53%, rgba(135,0,0,1) 88%);
+}
+.section4{
+    background: linear-gradient(92.42deg, #E4252C -21.11%, #000000 50.58%, #E4252C 126.41%);
+height: fit-content;
+padding: 5%;
+}
