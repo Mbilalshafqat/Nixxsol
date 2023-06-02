@@ -14,6 +14,7 @@ function App() {
         <Navbar />
 
         <Routes>
+          <Route exact path='/' element={<FirstPage />} />
           <Route exact path='/firstPage' element={<FirstPage />} />
           <Route exact path='/secondPage' element={<SecondPage />}/>
         </Routes>
