@@ -9,7 +9,7 @@ import Testimonials from './Testimonials';
 <>
 <div className="card my-5 p-5 no-hover" style={{width: "18rem;", border:"none", textAlign:"left", fontFamily:'Proxima Nova'}}>
   <div className="card-body">
-    <h1 className="card-title"style={{fontSize:"77px", fontWeight:"700"}}>About<br/>company</h1>
+    <h1 className="card-title specific-card">About<br/>company</h1>
     <p className="card-text">Mattis ornare tincidunt tempus mattis mi vel auctor ipsum venenatis.</p>
   </div>
 </div>
