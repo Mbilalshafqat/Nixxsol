@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
 import FirstPage from './components/FirstPage';
@@ -6,6 +5,7 @@ import SecondPage from './components/SecondPage';
 import ThirdPage from './components/ThirdPage';
 import ForthPage from './components/ForthPage';
 import FifthPage from './components/FifthPage';
+import SixthPage from './components/SixthPage';
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from './components/Footer';
@@ -24,6 +24,7 @@ function App() {
           <Route exact path='/thirdPage' element={<ThirdPage />}/>
           <Route exact path='/forthPage' element={<ForthPage />}/>
           <Route exact path='/fifthPage' element={<FifthPage />}/>
+          <Route exact path='/sixthPage' element={<SixthPage />}/>
 
         </Routes>
         <Footer/>
