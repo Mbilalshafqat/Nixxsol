@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import FirstPage from './components/FirstPage';
 import SecondPage from './components/SecondPage'; // Component names must start with a capital letter
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Footer from './Footer';
+import Footer from './components/Footer';
 import { MdFirstPage } from 'react-icons/md';
 
 function App() {
