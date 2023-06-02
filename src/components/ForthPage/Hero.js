@@ -13,6 +13,7 @@ import styles from './Home.module.css';
   </div>
 </div>
 
+
 <div className={styles.section1}>
   <Card/>
 </div>
