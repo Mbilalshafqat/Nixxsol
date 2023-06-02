@@ -23,7 +23,7 @@ import Partnership from './Partnership';
         <>
 <div className="card my-5 p-5 no-hover" style={{width: "18rem;", border:"none", textAlign:"left", fontFamily:'Proxima Nova'}}>
   <div className="card-body">
-    <h1 className="card-title"style={{fontSize:"80px", fontWeight:"700"}}>IT <br/> Services</h1>
+    <h1 className="card-title specific-card">IT <br/> Services</h1>
     <p className="card-text">Mattis ornare tincidunt tempus mattis mi vel auctor ipsum venenatis.</p>
   </div>
 </div>
@@ -33,7 +33,7 @@ import Partnership from './Partnership';
     <div className="col-md-4">
     <div className="col-md-8">
       <div className="card-body">
-      <h1 className="card-title"style={{fontSize:"80px", fontWeight:"700", textAlign:"left"}}>What we offer</h1>
+      <h1 className="card-title specific-card"style={{textAlign:"left"}}>What we offer</h1>
       </div>
     </div>
     </div>
