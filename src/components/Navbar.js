@@ -23,11 +23,10 @@ const linksData = [
   { name: "IT Services", href: "/SecondPage" },
   { name: "About", href: "/ThirdPage" },
   { name: "Portfolio", href: "/ForthPage" },
-];
+  ];
 
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const hoverColor = useColorModeValue("purple.900");
 
   const NavLink = ({ children, href }) => (
     <Link
@@ -36,7 +35,7 @@ export default function Simple() {
       rounded={"md"}
       _hover={{
         textDecoration: "none",
-        bg: hoverColor,
+        bg: useColorModeValue("gray.200", "gray.700"),
       }}
       href={href}
     >
@@ -46,14 +45,14 @@ export default function Simple() {
 
   const HomeButton = ({ children, href }) => {
     const path = window.location.pathname;
-    return path === "/SecondPage" || path === "/ForthPage" || path === "/ThirdPage" ? (
+    return path === "/SecondPage" || path === "/ForthPage" || path === "/ThirdPage" || path === "/FifthPage"  ? (
       <NavLink children={children} href={href} />
     ) : null;
   };
 
   return (
     <>
-      <Box bg={useColorModeValue("")} px={4}>
+      <Box bg={useColorModeValue("white", "gray.800")} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}
@@ -76,6 +75,15 @@ export default function Simple() {
                 <HomeButton key={link.name} href={link.href}>{link.name}</HomeButton> :
                 <NavLink key={link.name} href={link.href}>{link.name}</NavLink>
               ))}
+              <Menu>
+                <MenuButton as={Button} rounded={"md"} cursor={"pointer"}>
+                  Services
+                </MenuButton>
+                <MenuList>
+                  <MenuItem as={Link} href="/fifthPage">UI/UX Designs</MenuItem>
+                  <MenuItem as={Link} href="/sixthPage">Game Development</MenuItem>
+                </MenuList>
+              </Menu>
             </HStack>
           </HStack>
           <Flex alignItems={"center"}>
@@ -100,12 +108,23 @@ export default function Simple() {
 
         {isOpen ? (
           <Box pb={4} display={{ md: "none" }}>
+
+
             <Stack as={"nav"} spacing={4}>
               {linksData.map(link => (
                 link.name === "Home" ?
                 <HomeButton key={link.name} href={link.href}>{link.name}</HomeButton> :
                 <NavLink key={link.name} href={link.href}>{link.name}</NavLink>
               ))}
+              <Menu>
+                <MenuButton as={Button} rounded={"md"} cursor={"pointer"}>
+                  IT Service
+                </MenuButton>
+                <MenuList>
+                  <MenuItem as={Link} href="/service1">Service 1</MenuItem>
+                  <MenuItem as={Link} href="/service2">Service 2</MenuItem>
+                </MenuList>
+              </Menu>
             </Stack>
           </Box>
         ) : null}
