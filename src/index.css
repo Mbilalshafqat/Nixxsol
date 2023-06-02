@@ -64,9 +64,7 @@ code {
   .custom-h1 {
     font-size: 80px;
   }
-  .custom-specific{
-    margin-left: 0%;
-  }
+
 }
 
 @media screen and (max-width: 768px) { /* Medium screens and up */
