@@ -17,6 +17,8 @@ function App() {
           <Route exact path='/' element={<FirstPage />} />
           <Route exact path='/firstPage' element={<FirstPage />} />
           <Route exact path='/secondPage' element={<SecondPage />}/>
+                      <Route exact path='/thirdPage' element={<ThirdPage />}/>
+
         </Routes>
         <Footer/>
       </Router>
