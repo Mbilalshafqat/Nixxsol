@@ -20,7 +20,7 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 const linksData = [
   { name: "Home", href: "/FirstPage" },
-  { name: "About", href: "/SecondPage" },
+  { name: "IT Services", href: "/SecondPage" },
   { name: "Projects", href: "/projects" },
   { name: "Team", href: "/team" },
 ];
