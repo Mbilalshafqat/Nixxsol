@@ -18,7 +18,7 @@ import Cards from './Cards';
 import BookMeeting from './BookMeeting';
 import Partnership from './Partnership';
   
-  export default function CallToActionWithVideo() {
+  export default function Hero() {
     return (
         <>
 <div className="card my-5 p-5 no-hover" style={{width: "18rem;", border:"none", textAlign:"left", fontFamily:'Proxima Nova'}}>
