@@ -25,23 +25,31 @@ const linksData = [
   { name: "Team", href: "/team" },
 ];
 
-const NavLink = ({ children, href }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={"md"}
-    _hover={{
-      textDecoration: "none",
-      bg: useColorModeValue("purple.900"),
-    }}
-    href={href}
-  >
-    {children}
-  </Link>
-);
-
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const hoverColor = useColorModeValue("purple.900");
+
+  const NavLink = ({ children, href }) => (
+    <Link
+      px={2}
+      py={1}
+      rounded={"md"}
+      _hover={{
+        textDecoration: "none",
+        bg: hoverColor,
+      }}
+      href={href}
+    >
+      {children}
+    </Link>
+  );
+
+  const HomeButton = ({ children, href }) => {
+    const path = window.location.pathname;
+    return path === "/SecondPage" || path === "/team" ? (
+      <NavLink children={children} href={href} />
+    ) : null;
+  };
 
   return (
     <>
@@ -64,6 +72,8 @@ export default function Simple() {
               display={{ base: "none", md: "flex" }}
             >
               {linksData.map(link => (
+                link.name === "Home" ?
+                <HomeButton key={link.name} href={link.href}>{link.name}</HomeButton> :
                 <NavLink key={link.name} href={link.href}>{link.name}</NavLink>
               ))}
             </HStack>
@@ -92,6 +102,8 @@ export default function Simple() {
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
               {linksData.map(link => (
+                link.name === "Home" ?
+                <HomeButton key={link.name} href={link.href}>{link.name}</HomeButton> :
                 <NavLink key={link.name} href={link.href}>{link.name}</NavLink>
               ))}
             </Stack>
