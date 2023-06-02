@@ -21,7 +21,7 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 const linksData = [
   { name: "Home", href: "/FirstPage" },
   { name: "IT Services", href: "/SecondPage" },
-  { name: "Projects", href: "/projects" },
+  { name: "About", href: "/ThirdPage" },
   { name: "Team", href: "/team" },
 ];
 
@@ -46,7 +46,7 @@ export default function Simple() {
 
   const HomeButton = ({ children, href }) => {
     const path = window.location.pathname;
-    return path === "/SecondPage" || path === "/team" ? (
+    return path === "/SecondPage" || path === "/team" || path === "/ThirdPage" ? (
       <NavLink children={children} href={href} />
     ) : null;
   };
