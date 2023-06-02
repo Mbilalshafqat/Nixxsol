@@ -1,0 +1,89 @@
+import { Flex, Text, Image, Button, Input, useBreakpointValue } from "@chakra-ui/react";
+import { HiLocationMarker } from "react-icons/hi";
+import { BsTelephoneFill } from "react-icons/bs";
+import { AiOutlineTwitter, AiOutlineInstagram, AiFillFacebook } from "react-icons/ai";
+import { MdEmail, MdMail } from "react-icons/md";
+
+const Footer = () => {
+  const flexDirection = useBreakpointValue({ base: "column", md: "row" });
+
+  return (
+    <Flex direction="column">
+      <Flex position="absolute" mt="1rem" ml="2rem">
+        <Image src="./logo.svg" />
+      </Flex>
+      <Flex
+        bgColor="white"
+        color="black"
+        pt="5rem"
+        pb="3rem"
+        px="3rem"
+        alignItems="center"
+        flexWrap="wrap"
+      >
+        {/* phone email address */}
+        <Flex direction="column" gap="1rem" flex={{ base: "1", md: "auto" }}>
+          <Flex alignItems="center" gap="1rem">
+            <BsTelephoneFill style={{ fontSize: "22px" }} />
+            <Text>+92 300 1234567</Text>
+          </Flex>
+          <Flex alignItems="center" gap="1rem">
+            <MdMail style={{ fontSize: "22px" }} />
+            <Text>info@nixxsol.com</Text>
+          </Flex>
+          <Flex alignItems="center" gap="1rem">
+            <HiLocationMarker style={{ fontSize: "22px" }} />
+            <Text w="50%">
+              Lorem ipsum dolor sit amet consectetur. Dui libero lectus pulvinar mattis a.
+            </Text>
+          </Flex>
+        </Flex>
+        {/* stay in connection */}
+        <Flex
+          direction="column"
+          gap="1rem"
+          flex={{ base: "1", md: "auto" }}
+          mt={{ base: "2rem", md: "0" }}
+        >
+          <Flex justifyContent="space-between">
+            <Text _hover={{ cursor: "pointer" }}>About</Text>
+            <Text _hover={{ cursor: "pointer" }}>Services</Text>
+            <Text _hover={{ cursor: "pointer" }}>Portfolio</Text>
+            <Text _hover={{ cursor: "pointer" }}>Contact us</Text>
+          </Flex>
+          <Text fontWeight={700} fontSize="24px" mt="1rem">
+            Stay in Connection
+          </Text>
+          <Flex
+            bgColor="#272727"
+            p="0.5rem"
+            borderRadius="8px"
+            justifyContent="space-between"
+            alignItems="center"
+            gap="0.5rem"
+          >
+            <Input type="text" placeholder="Email Address" border="none" />
+            <Button
+              p="0.5rem 1rem"
+              bgColor="#E92129"
+              color="white"
+              _hover={{ backgroundColor: "" }}
+            >
+              Contact Us
+            </Button>
+          </Flex>
+        </Flex>
+      </Flex>
+      <Flex py="1.5rem" px="3rem" justifyContent="space-between">
+        <Text>© 2022 Nixxsol All Rights Reserved.</Text>
+        <Flex gap="1rem">
+          <AiFillFacebook />
+          <AiOutlineTwitter />
+          <AiOutlineInstagram />
+        </Flex>
+      </Flex>
+    </Flex>
+  );
+};
+
+export default Footer;

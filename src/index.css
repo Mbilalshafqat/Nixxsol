@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  font-family: 'Proxima Nova';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.card:hover{
+  box-shadow: 0 15px 10px -5px rgba(255, 1, 1, 0.5);
+  transition: all 0.3s ease;
+
+}
+.card.no-hover:hover {
+  box-shadow: none;
+  transition: none;
+}
+@media (min-width: 992px) { /* Bootstrap's large screen breakpoint */
+  .my-card-body {
+    padding-left: 14%; /* Adjust as needed */
+  }
+  .my-title{
+    white-space: nowrap; /* Adjust as needed */
+  }
+}
+.dynamic-spacing {
+  letter-spacing: 0.545em;
+}
+
+@media screen and (max-width: 576px) {
+  .dynamic-spacing {
+    letter-spacing: normal;
+  }
+}
+
+
