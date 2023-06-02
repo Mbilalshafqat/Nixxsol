@@ -37,8 +37,8 @@ export default function Card(){
          </div>
   </div>
 </div>
-<div class="col d-flex justify-content-center pt-4">
-  <button class="btn btn-secondary" type="button">Load More</button>
+<div className="col d-flex justify-content-center pt-4">
+  <button className="btn btn-secondary" type="button">Load More</button>
 </div>
 
 
