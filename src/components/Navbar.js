@@ -22,7 +22,7 @@ const linksData = [
   { name: "Home", href: "/FirstPage" },
   { name: "IT Services", href: "/SecondPage" },
   { name: "About", href: "/ThirdPage" },
-  { name: "Team", href: "/team" },
+  { name: "Portfolio", href: "/ForthPage" },
 ];
 
 export default function Simple() {
