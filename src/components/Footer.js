@@ -27,13 +27,13 @@ const Footer = () => {
         <Flex direction="column" spacing="1rem" flex={{ base: "1", md: "auto" }}>
           <Flex>
             <BsTelephoneFill style={{ fontSize: "22px", alignSelf: "center" }} />
-            <Box ml="1rem" pt="0.6rem">
+            <Box ml="1rem" pt="0.9rem">
               <Text>+92 300 1234567</Text>
             </Box>
           </Flex>
           <Flex>
             <MdMail style={{ fontSize: "22px", alignSelf: "center" }} />
-            <Box ml="1rem" pt="0.6rem">
+            <Box ml="1rem" pt="0.7rem">
               <Text>info@nixxsol.com</Text>
             </Box>
           </Flex>
