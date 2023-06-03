@@ -74,8 +74,8 @@ export default function Simple() {
                 <NavLink key={link.name} href={link.href}>{link.name}</NavLink>
               ))}
               <Menu>
-                <MenuButton as={Button} rounded={"md"} cursor={"pointer"}>
-                  Services
+                <MenuButton rounded={"md"} cursor={"pointer"}>
+                  Services&#9660;
                 </MenuButton>
                 <MenuList>
                   <MenuItem as={Link} href="/fifthPage">UI/UX Designs</MenuItem>
@@ -111,13 +111,13 @@ export default function Simple() {
                 <NavLink key={link.name} href={link.href}>{link.name}</NavLink>
               ))}
               <Menu>
-                <MenuButton as={Button} rounded={"md"} cursor={"pointer"}>
-                  IT Service
+               <MenuButton rounded={"md"} cursor={"pointer"}>
+                  Services&#9660;
                 </MenuButton>
                 <MenuList>
-                  <MenuItem as={Link} href="/service1">Service 1</MenuItem>
-                  <MenuItem as={Link} href="/service2">Service 2</MenuItem>
-                </MenuList>
+                  <MenuItem as={Link} href="/fifthPage">UI/UX Designs</MenuItem>
+                  <MenuItem as={Link} href="/sixthPage">Game Development</MenuItem>
+                  </MenuList>
               </Menu>
             </Stack>
           </Box>
