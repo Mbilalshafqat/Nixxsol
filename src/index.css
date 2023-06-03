@@ -9,11 +9,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.card:hover{
-  box-shadow: 0 15px 10px -5px rgba(255, 1, 1, 0.5);
-  transition: all 0.3s ease;
 
-}
 .card.no-hover:hover {
   box-shadow: none;
   transition: none;
