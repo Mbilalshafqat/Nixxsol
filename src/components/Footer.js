@@ -1,4 +1,4 @@
-import { Flex, Text, Image, Button, Input, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Text, Image, Button, Input, useBreakpointValue, Flex } from "@chakra-ui/react";
 import { HiLocationMarker } from "react-icons/hi";
 import { BsTelephoneFill } from "react-icons/bs";
 import { AiOutlineTwitter, AiOutlineInstagram, AiFillFacebook } from "react-icons/ai";
@@ -6,9 +6,11 @@ import { MdEmail, MdMail } from "react-icons/md";
 
 const Footer = () => {
   const flexDirection = useBreakpointValue({ base: "column", md: "row" });
+  const iconSize = useBreakpointValue({ base: "40px", md: "22px" });
+  const textTopMargin = useBreakpointValue({ base: "0.7rem", md: "0" });
 
   return (
-    <Flex direction="column">
+    <Flex direction="column" mt="1rem">
       <Flex position="absolute" mt="1rem" ml="2rem">
         <Image src="./logo.svg" />
       </Flex>
@@ -22,20 +24,27 @@ const Footer = () => {
         flexWrap="wrap"
       >
         {/* phone email address */}
-        <Flex direction="column" gap="1rem" flex={{ base: "1", md: "auto" }}>
-          <Flex alignItems="center" gap="1rem">
-            <BsTelephoneFill style={{ fontSize: "22px" }} />
-            <Text>+92 300 1234567</Text>
+        <Flex direction="column" spacing="1rem" flex={{ base: "1", md: "auto" }}>
+          <Flex>
+            <BsTelephoneFill style={{ fontSize: "22px", alignSelf: "center" }} />
+            <Box ml="1rem" pt="0.6rem">
+              <Text>+92 300 1234567</Text>
+            </Box>
           </Flex>
-          <Flex alignItems="center" gap="1rem">
-            <MdMail style={{ fontSize: "22px" }} />
-            <Text>info@nixxsol.com</Text>
+          <Flex>
+            <MdMail style={{ fontSize: "22px", alignSelf: "center" }} />
+            <Box ml="1rem" pt="0.6rem">
+              <Text>info@nixxsol.com</Text>
+            </Box>
           </Flex>
-          <Flex alignItems="center" gap="1rem">
-            <HiLocationMarker style={{ fontSize: "22px" }} />
-            <Text w="50%">
-              Lorem ipsum dolor sit amet consectetur. Dui libero lectus pulvinar mattis a.
-            </Text>
+          <Flex>
+          <HiLocationMarker style={{ fontSize: iconSize, alignSelf: "justify", marginTop:"6px" }} />            <Box ml="-1rem">
+          <Box ml="-1rem" mt={textTopMargin}>
+              <Text w="50%" mt={0.2} style={{textAlign:"left", marginLeft:"42px"}}>
+                Lorem ipsum dolor sit amet consectetur. Dui libero lectus pulvinar mattis a.
+              </Text>
+            </Box>
+            </Box>
           </Flex>
         </Flex>
         {/* stay in connection */}
