@@ -15,9 +15,10 @@
 
   @media (max-width: 767px) {
     .cards{
-      padding-left: 0%;
-      padding-right: 0%;
+      padding-left: 3%;
+      padding-right: 3%;
       padding-bottom: 5%;
+      padding-top: 5%;
   }
   .card{
     padding-left: 0% !important;
