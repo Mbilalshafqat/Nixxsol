@@ -24,7 +24,7 @@ import {
         <Flex p={8} flex={1} align={"center"} justify={"center"}>
           <Stack spacing={6} w={"full"} maxW={"lg"}>
             
-            <Heading fontSize={{ base: "3xl", md: "xl", lg: "7xl" }} align={"left"}>
+            <Heading fontSize={{ base: "5xl", md: "xl", lg: "7xl" }} align={"left"}>
             
               <br />{" "}
               <Text color={"white"} as={"span"}>
