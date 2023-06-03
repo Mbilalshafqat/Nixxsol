@@ -27,38 +27,38 @@ export default function SplitScreen() {
         </Flex>
       );
     })
-  return (
-    <Stack minH={'70vh'} direction={{ base: 'column', md: 'row' }}>
-      <Flex p={5} flex={1} align={'center'} justify={'center'} fontFamily={'Proxima Nova'}>
-        <Stack spacing={6} w={'full'} maxW={'lg'}>
-          <Heading fontSize={{ base: '3xl', md: '4xl', lg: '7xl' }}>
-           
-            <Text as={'span'}>
-             About Company
-            </Text>{' '}
-          </Heading>
-        
-          <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
-           
+    return (
+      <Stack minH={'55vh'} direction={{ base: 'column', md: 'row' }}>
+        <Flex p={1} flex={1} align={'start'} justify={'start'} fontFamily={'Proxima Nova'} >
+          <Stack spacing={5} w={'full'} maxW={'lg'}>
+            <Heading fontSize={{ base: '6xl', md: '4xl', lg: '7xl' }} pl={20} mt={35} textAlign={"justify"}>
+              <Text as={'span'}>
+               About<br/>Company
+              </Text>{' '}
+            </Heading>
+            <Stack direction={{ base: 'column', md: 'row' }} spacing={3}>
+            </Stack>
           </Stack>
-        </Stack>
-      </Flex>
-      <Flex  direction={"column"}
-      flex="1"
-      justifyContent={"justify"}
-      gap={"1rem"}>
-      <Text fontSize={"30px"} fontFamily={"sans-serif"} pt={32}>
-        Lorem ipsum dolor sit amet consectetur. Vestibulum nascetur vitae
-        sapien{" "}
-      </Text>
-      <Text pr={4} fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
-          The project board is an exclusive resource for contract work. It's
-          perfect for freelancers, agencies, and moonlighters.
+        </Flex>
+        <Flex  direction={"column"}
+        flex="1"
+        justifyContent={"justify"}
+        gap={"0.5rem"}
+        pr={35}>
+        <Text fontSize={"30px"} fontFamily={"sans-serif"} pt={27}>
+          Lorem ipsum dolor sit amet consectetur. Vestibulum nascetur vitae
+          sapien{" "}
         </Text>
-        <Flex justifyContent={'space-between'} pr='3rem'>
-        {statList}
-      </Flex>
-      </Flex>
-    </Stack>
-  );
+        <Text pr={4} fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
+            The project board is an exclusive resource for contract work. It's
+            perfect for freelancers, agencies, and moonlighters.
+          </Text>
+          <Flex justifyContent={'space-between'} >
+          {statList}
+        </Flex>
+        </Flex>
+      </Stack>
+    );
+
+
 }
