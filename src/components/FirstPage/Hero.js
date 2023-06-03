@@ -5,7 +5,7 @@ import About from './About';
 import Portfolio from './Portfolio';
 import Testimonials from './Testimonials';
 import BookMeeting from './BookMeeting';
-import Partnership from '../SecondPage/Partnership';
+import Partnership from './Partnership';
 
 export default function Hero(){
     return(
