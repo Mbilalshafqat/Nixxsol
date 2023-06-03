@@ -41,3 +41,10 @@ text-align: left;
     height: fit-content;
     padding: 3%;
 }
+
+@media (max-width: 768px) { /* Medium screens and up */
+.section2 button{
+    margin-bottom: 4%;
+}
+
+}
