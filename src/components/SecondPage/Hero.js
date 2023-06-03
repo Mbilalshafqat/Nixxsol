@@ -16,7 +16,7 @@ import {
   import styles from './Home.module.css';
 import Cards from './Cards';
 import BookMeeting from './BookMeeting';
-import Partnership from './Partnership';
+import Partnership from '../FirstPage/Partnership';
   
   export default function Hero() {
     return (
