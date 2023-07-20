@@ -1,59 +1,27 @@
 import {
-  Box,
-  Flex,
-  Avatar,
-  HStack,
-  Link,
-  IconButton,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
-  useDisclosure,
-  useColorModeValue,
-  Stack
+  Box
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { useNavigate } from "react-router-dom";
 
 
 const linksData = [
-  { name: "Home", href: "/FirstPage" },
-  { name: "IT Services", href: "/SecondPage" },
-  { name: "About", href: "/ThirdPage" },
-  { name: "Portfolio", href: "/ForthPage" },
-  ];
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "IT Services", href: "/ItServices" },
+  { name: "Portfolio", href: "/portfolio" },
+];
 
-export default function Simple() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+export default function Navbar() {
+  const navigate = useNavigate()
 
-  const NavLink = ({ children, href }) => (
-    <Link
-      px={2}
-      py={1}
-      rounded={"md"}
-      _hover={{
-        textDecoration: "none",
-        bg: useColorModeValue("gray.200", "gray.700"),
-      }}
-      href={href}
-    >
-      {children}
-    </Link>
-  );
-
-  const HomeButton = ({ children, href }) => {
-    const path = window.location.pathname;
-    return path === "/SecondPage" || path === "/ForthPage" || path === "/ThirdPage" || path === "/FifthPage"  ? (
-      <NavLink children={children} href={href} />
-    ) : null;
-  };
+  const path = window.location.pathname
 
   return (
     <>
-      <Box bg={useColorModeValue("white", "gray.800")} px={4}>
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+      <Box
+      //bg={useColorModeValue("white", "gray.800")} px={4}
+      >
+        {/* <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -63,7 +31,7 @@ export default function Simple() {
           />
           <HStack spacing={8} alignItems={"center"}>
             <Box>
-              <img src='./logo.svg' alt=""/>
+              <img src='./logo.svg' alt="" />
             </Box>
             <HStack
               as={"nav"}
@@ -102,26 +70,63 @@ export default function Simple() {
               </MenuList>
             </Menu>
           </Flex>
-        </Flex>
+        </Flex> */}
 
-        {isOpen ? (
+        {/* -------------------------- NAVBAR FIGMA -----------------------*/}
+
+        <div style={{ fontWeight: "400" }} className={` ${path === "/" ? "text-[#fdfdfd]" : "text-[#161616]"} h-[100px] bg-transparent mx-24 lg:text-sm flex justify-between place-items-center`}>
+          <div className="flex place-items-center gap-2">
+            <img className="h-[43px]" src={path === "/" ? "./First-Page//nixxol logo white.png" : "./First-Page//nixxol logo black.png"} alt="..." />
+            {/* <img src="./First-Page//nix-logo.JPG" />jk */}
+          </div>
+          <div className="flex justify-between gap-16">
+            {
+              linksData.map((list, index) => {
+                return (
+                  <>
+                    <div className={`${list.href === path ? "font-bold" : "cursor-pointer"} `} key={index}
+                      onClick={() => navigate((list.href === path) ? null : list.href)
+                      }>
+                      {list.name}
+                    </div>
+                  </>
+                )
+              })
+            }
+          </div>
+          <div className="grid text-right content-center">
+            <span>nixxsol@gmail.com</span>
+            <span>(09)887532131</span>
+          </div>
+        </div>
+
+
+
+        {/* -------------------------- NAVBAR FIGMA -----------------------*/}
+
+
+
+
+
+
+        {/* {isOpen ? (
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
               {linksData.map(link => (
                 <NavLink key={link.name} href={link.href}>{link.name}</NavLink>
               ))}
               <Menu>
-               <MenuButton rounded={"md"} cursor={"pointer"}>
+                <MenuButton rounded={"md"} cursor={"pointer"}>
                   Services&#9660;
                 </MenuButton>
                 <MenuList>
                   <MenuItem as={Link} href="/fifthPage">UI/UX Designs</MenuItem>
                   <MenuItem as={Link} href="/sixthPage">Game Development</MenuItem>
-                  </MenuList>
+                </MenuList>
               </Menu>
             </Stack>
           </Box>
-        ) : null}
+        ) : null} */}
       </Box>
     </>
   );

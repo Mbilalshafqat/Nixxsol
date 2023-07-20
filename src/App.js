@@ -15,16 +15,14 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar />
-
         <Routes>
-          <Route exact path="/" element={<FirstPage />} />
-          <Route exact path="/firstPage" element={<FirstPage />} />
-          <Route exact path="/secondPage" element={<SecondPage />} />
-          <Route exact path="/thirdPage" element={<ThirdPage />} />
-          <Route exact path="/forthPage" element={<ForthPage />} />
-          <Route exact path="/fifthPage" element={<FifthPage />} />
-          <Route exact path="/sixthPage" element={<SixthPage />} />
+          <Route exact path='/' element={<FirstPage />} />
+          <Route exact path='/ItServices' element={<SecondPage />}/>
+          <Route exact path='/about' element={<ThirdPage />}/>
+          <Route exact path='/portfolio' element={<ForthPage />}/>
+          <Route exact path='/fifthPage' element={<FifthPage />}/>
+          <Route exact path='/sixthPage' element={<SixthPage />}/>
+
         </Routes>
         <Footer />
       </Router>
