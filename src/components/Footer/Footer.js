@@ -55,7 +55,7 @@ const Footer = () => {
           {/* -------------------------------------right_conent_footer_li */}
           <div className="right_conent_footer_li">
             <li>
-              <NavLink to="/">About</NavLink>
+              <NavLink to="/about">About</NavLink>
             </li>
             <li>
               <NavLink to="/">Services</NavLink>
