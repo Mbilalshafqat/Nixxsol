@@ -22,7 +22,7 @@ export default function SplitScreen() {
         }
         backgroundSize={'cover'}
         backgroundPosition={'center center'}
-        templateRows={'repeat(5, 1fr)'}
+        templateRows={'repeat(6, 1fr)'}
       >
         <React.Fragment>
           <Navbar />

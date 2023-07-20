@@ -1,46 +1,20 @@
 import {
-  Box,
-  Flex,
-  Avatar,
-  HStack,
-  Link,
-  IconButton,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
-  useDisclosure,
-  useColorModeValue,
-  Stack
+  Box
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { useNavigate } from "react-router-dom";
 
 
 const linksData = [
-  { name: "Home", href: "" },
-  { name: "IT Services", href: "/ItServices" },
+  { name: "Home", href: "/" },
   { name: "About", href: "/about" },
+  { name: "IT Services", href: "/ItServices" },
   { name: "Portfolio", href: "/portfolio" },
 ];
 
 export default function Navbar() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const navigate = useNavigate()
 
-  // const HomeButton = ({ children, href }) => {
-  //   const path = window.location.pathname;
-  //   return path === "/SecondPage" || path === "/ForthPage" || path === "/ThirdPage" || path === "/FifthPage" ? (
-  //     <NavLink children={children} href={href} />
-  //   ) : null;
-  // };
-
-  const path = (link) => {
-    const path = window.location.pathname;
-    console.log(link)
-    if (path === "" && link === "") return null
-    else return link
-  }
+  const path = window.location.pathname
 
   return (
     <>
@@ -100,29 +74,29 @@ export default function Navbar() {
 
         {/* -------------------------- NAVBAR FIGMA -----------------------*/}
 
-        <div className="h-[70px] bg-transparent mx-24 border text-white flex justify-between place-items-center">
+        <div style={{ fontWeight: "400" }} className={` ${path === "/" ? "text-[#fdfdfd]" : "text-[#161616]"} h-[100px] bg-transparent mx-24 lg:text-sm flex justify-between place-items-center`}>
           <div className="flex place-items-center gap-2">
-            <img className="h-[43px]" src="./First-Page//Vector.png" alt="..." />
-            <img className="h-[22px]" src="./First-Page//Group 2.png" alt="..." />
+            <img className="h-[43px]" src={path === "/" ? "./First-Page//nixxol logo white.png" : "./First-Page//nixxol logo black.png"} alt="..." />
             {/* <img src="./First-Page//nix-logo.JPG" />jk */}
           </div>
-          <div className="text-white flex justify-between gap-8 lg:text-sm font-normal">
+          <div className="flex justify-between gap-16">
             {
               linksData.map((list, index) => {
                 return (
                   <>
-                    <span className="text-decoration-none text-white" key={index}>
-                      <Link to={() => path(list.href)}>
-                        {list.name}
-                      </Link>
-                    </span>
+                    <div className={`${list.href === path ? "font-bold" : "cursor-pointer"} `} key={index}
+                      onClick={() => navigate((list.href === path) ? null : list.href)
+                      }>
+                      {list.name}
+                    </div>
                   </>
                 )
               })
             }
           </div>
-          <div>
-            <span>hell</span>
+          <div className="grid text-right content-center">
+            <span>nixxsol@gmail.com</span>
+            <span>(09)887532131</span>
           </div>
         </div>
 
