@@ -1,15 +1,15 @@
-import './App.css';
-import Navbar from './components/Navbar';
-import FirstPage from './components/FirstPage';
-import SecondPage from './components/SecondPage'; 
-import ThirdPage from './components/ThirdPage';
-import ForthPage from './components/ForthPage';
-import FifthPage from './components/FifthPage';
-import SixthPage from './components/SixthPage';
+import "./App.css";
+import Navbar from "./components/Navbar";
+import FirstPage from "./components/FirstPage";
+import SecondPage from "./components/SecondPage";
+import ThirdPage from "./components/ThirdPage";
+import ForthPage from "./components/ForthPage";
+import FifthPage from "./components/FifthPage";
+import SixthPage from "./components/SixthPage";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Footer from './components/Footer';
-import { MdFirstPage } from 'react-icons/md';
+import { MdFirstPage } from "react-icons/md";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
           <Route exact path='/sixthPage' element={<SixthPage />}/>
 
         </Routes>
-        <Footer/>
+        <Footer />
       </Router>
     </div>
   );
