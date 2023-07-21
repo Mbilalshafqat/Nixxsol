@@ -16,7 +16,7 @@
 /* ====================================================== footer_content */
 .footer_content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.8fr 1fr;
   gap: 125.943px;
   width: 100%;
   margin-bottom: 46px;
@@ -30,7 +30,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 25px;
+  gap: 18px;
 }
 .left_footer_box {
   display: flex;
@@ -50,7 +50,6 @@
 }
 .footer_conent_right p {
   color: #1d1d1d;
-  font-family: Proxima Nova;
   font-size: 15.993px;
   font-style: normal;
   font-weight: 400;
@@ -58,7 +57,6 @@
   letter-spacing: 0.32px;
 }
 .left_footer_box .svg {
-  font-family: Proxima Nova;
   font-weight: 400;
   line-height: 23.989px; /* 150% */
   font-size: 23px;
@@ -76,8 +74,7 @@
 }
 .right_conent_footer_li li a {
   color: #1d1d1d;
-  font-family: Proxima Nova;
-  font-size: 21.99px;
+  font-size: 19px;
   font-style: normal;
   font-weight: 400;
   line-height: 23.989px; /* 109.091% */
@@ -91,14 +88,13 @@
 
 .right_conent_footer_mail p {
   color: #1d1d1d;
-  font-family: Proxima Nova;
-  font-size: 31.986px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 400;
   line-height: 23.989px; /* 75% */
   letter-spacing: 0.64px;
   text-align: left;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 /* ---------------------- right_content_footer_input */
 .right_content_footer_input {
@@ -114,7 +110,6 @@
 }
 .right_content_footer_input input {
   color: #5f5f5f;
-  font-family: Proxima Nova;
   font-size: 15.993px;
   font-style: normal;
   font-weight: 400;
@@ -145,7 +140,6 @@
 
 .bottom_footer p {
   color: #1d1d1d;
-  font-family: Proxima Nova;
   font-size: 16.8px;
   font-style: normal;
   font-weight: 400;
@@ -190,7 +184,7 @@
     align-items: flex-start;
   }
   .footer_conent_left {
-    gap: 10px;
+    gap: 20px;
   }
 }
 
@@ -206,7 +200,7 @@
     gap: 10px;
   }
   .footer_conent_left {
-    gap: 5px;
+    gap: 20px;
   }
 }
 @media (max-width: 860px) {
