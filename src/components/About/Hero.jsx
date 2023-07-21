@@ -49,6 +49,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      {/* ------------------ metting component  */}
     </>
   );
 };

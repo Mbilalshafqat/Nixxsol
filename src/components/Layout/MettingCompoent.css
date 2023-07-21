@@ -1,0 +1,123 @@
+.metting_component {
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  padding: 50px 91px;
+  gap: 50px;
+  background-image: linear-gradient(
+    to right,
+    #191919,
+    100%,
+    #191919 10%,
+    #e4252c
+  );
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.metting_component::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 5px;
+  background-color: #e4252c;
+  opacity: 0.8;
+  box-shadow: 0px 0px 1000px 200px #e4252c;
+  top: -70px;
+  right: 0;
+  z-index: 1;
+}
+.metting_component::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 5px;
+  background-color: #e4252c;
+  opacity: 0.8;
+  box-shadow: 0px 0px 1000px 170px #e4252c;
+  bottom: -100px;
+  right: 0;
+  z-index: 2;
+  border-top-right-radius: 100%;
+}
+
+/* ================================= left_metting */
+.left_metting {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.top_metting_span {
+  color: gray;
+  font-family: Proxima Nova;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 103.8%; /* 20.76px */
+  margin-bottom: 26px;
+  position: relative;
+}
+.top_metting_span::before {
+  content: "";
+  position: absolute;
+  right: 390px;
+  bottom: 7px;
+  background-color: gray;
+  width: 65px;
+  height: 1px;
+  z-index: 1;
+}
+
+.left_metting h2 {
+  width: 578px;
+  color: #fff;
+  font-family: Proxima Nova;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 103.8%; /* 83.04px */
+}
+.left_metting p {
+  color: gray;
+  font-family: Proxima Nova;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 139.8%; /* 27.96px */
+  width: 559px;
+  margin-top: 30px;
+}
+
+/* ============================= right_metting */
+.right_metting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.right_metting input {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid gray;
+  outline: none;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.right_metting textarea {
+  border-radius: 0;
+  outline: none;
+  border: 1px solid gray;
+}
+
+.right_metting button {
+  padding: 10px 30px;
+  color: white;
+  background-color: #e4252c;
+  margin-top: 24px;
+  text-align: center;
+  cursor: pointer;
+}

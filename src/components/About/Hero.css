@@ -103,6 +103,22 @@
   opacity: 0.699999988079071;
 }
 
+/* =========================================================== worg_process */
+
+.worg_process {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.worg_process img {
+  width: 100%;
+  object-fit: contain;
+}
+.worg_process .resposive {
+  width: 100%;
+  object-fit: contain;
+  display: none;
+}
+
 /* ---------------------media  */
 @media (max-width: 1300px) {
   .right_facts {
@@ -187,6 +203,12 @@
 @media (max-width: 500px) {
   .left_facts h2 {
     width: 80%;
+  }
+  .worg_process .computer_view {
+    display: none;
+  }
+  .worg_process .resposive {
+    display: block;
   }
 }
 
