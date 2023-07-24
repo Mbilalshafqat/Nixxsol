@@ -1,10 +1,10 @@
 import React from "react";
-import Testimonial from "../About/Testimonial/Testimonial";
+import HomeTestimonial from "./HomeTestimonial.jsx";
 
 const Portfolio = () => {
   return (
     <div>
-      <Testimonial />
+      <HomeTestimonial />
     </div>
   );
 };
