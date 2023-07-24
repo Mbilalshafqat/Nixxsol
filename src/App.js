@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<FirstPage />} />
           <Route exact path='/it_services' element={<SecondPage />}/>
-          <Route exact path='/about' element={<ThirdPage />}/>
+          <Route exact path='/about' element={<About />}/>
           <Route exact path='/portfolio' element={<ForthPage />}/>
           <Route exact path='/ui_ux' element={<FifthPage />}/>
           <Route exact path='/game_devlopment' element={<SixthPage />}/>
