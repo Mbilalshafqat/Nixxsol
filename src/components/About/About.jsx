@@ -10,7 +10,7 @@ import Testimonial from "./Testimonial/Testimonial";
 const About = () => {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <div className="about_page">
         <Hero />
       </div>
