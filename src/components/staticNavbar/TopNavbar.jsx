@@ -19,25 +19,27 @@ const linksData = [
 ];
 
 export default function TopNavbar() {
+  const [open, setOpen] = useState(false); // to open the menu in samll screens
+
   const navigate = useNavigate();
   const { width } = useWindowsDimension();
   const path = window.location.pathname;
 
+  // handles the click events on link
   const [hover, setHover] = useState();
-
   function handleItClick(list) {
     navigate(list === path ? null : list);
     setHover(false);
   }
 
+  // handles the static navbar
   const [showNavbar, setShowNavbar] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
       setShowNavbar(
-        currentScrollPos < 200 || currentScrollPos <= prevScrollPos
+        currentScrollPos < 110 || currentScrollPos <= prevScrollPos
       );
       setPrevScrollPos(currentScrollPos);
     };
@@ -67,7 +69,8 @@ export default function TopNavbar() {
             <>
               <div className="flex place-items-center">
                 <img
-                  className="xl:h-[43px] lg:h-[40px] md:h-[35px]"
+                  onClick={() => navigate(path === "/" ? null : "/")}
+                  className="cursor-pointer xl:h-[43px] lg:h-[40px] md:h-[35px]"
                   src={"./First-Page//nixxol logo black.png"}
                   alt="..."
                 />
@@ -143,16 +146,36 @@ export default function TopNavbar() {
             <>
               <div className="flex place-items-center">
                 <img
+                  onClick={() => navigate(path === "/" ? null : "/")}
                   className="xs:h-[28px] sm:h-[32px] md:h-[40px]"
                   src={"./First-Page//nixxol logo black.png"}
                   alt="..."
                 />
               </div>
-              <div>
+              <div
+                onClick={() => {
+                  setOpen(true);
+                }}
+              >
                 <HamburgerIcon boxSize={6} />
               </div>
             </>
           )}
+        </div>
+      </div>
+      <div
+        className={`${
+          open
+            ? "transition-all duration-300 bg-transparent flex fixed top-0 left-0 right-0 bottom-0 z-[99999] overflow-y-hidden"
+            : "-left-full top-0 right-0 bottom-0 transition-all duration-300"
+        }`}
+      >
+        <div className="h-[100%] w-[75%] bg-white shadow-md"></div>
+        <div
+          className="w-[25%] !bg-[rgba(0,0,0,0.5)] h-[100%] backdrop-blur-sm relative"
+          onClick={() => setOpen(false)}
+        >
+          <div className=""></div>
         </div>
       </div>
       {/* -------------------------- NAVBAR FIGMA -----------------------*/}

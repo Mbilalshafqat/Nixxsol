@@ -9,8 +9,14 @@ import SixthPage from "./components/SixthPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import TopNavbar from "./components/staticNavbar/TopNavbar";
+import React from "react";
 
 function App() {
+
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, scroll: "instant" })
+  }, [])
+
   return (
     <>
       <div className="relative">

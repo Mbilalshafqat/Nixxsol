@@ -39,7 +39,7 @@ export default function Navbar({ top }) {
           h-[100px] bg-transparent px-24 md:px-16 sm:px-6  xs:px-4 lg:text-sm md:text-xs flex justify-between place-items-center`}>
         {width > 880 ?
           <><div className="flex place-items-center">
-            <img className="xl:h-[43px] lg:h-[40px] md:h-[35px]" src={path === "/" ? "./First-Page//nixxol logo white.png" : "./First-Page//nixxol logo black.png"} alt="..." />
+            <img onClick={() => navigate(path === "/" ? null : "/")} className="cursor-pointer xl:h-[43px] lg:h-[40px] md:h-[35px]" src={path === "/" ? "./First-Page//nixxol logo white.png" : "./First-Page//nixxol logo black.png"} alt="..." />
           </div>
             <div className="flex justify-between gap-16">
               {
@@ -83,7 +83,7 @@ export default function Navbar({ top }) {
             </div></> :
           <>
             <div className="flex place-items-center">
-              <img className="xs:h-[28px] sm:h-[32px] md:h-[40px]" src={path === "/" ? "./First-Page//nixxol logo white.png" : "./First-Page//nixxol logo black.png"} alt="..." />
+              <img onClick={() => navigate(path === "/" ? null : "/")} className="xs:h-[28px] sm:h-[32px] md:h-[40px]" src={path === "/" ? "./First-Page//nixxol logo white.png" : "./First-Page//nixxol logo black.png"} alt="..." />
             </div>
             <div>
               <HamburgerIcon boxSize={6} />
