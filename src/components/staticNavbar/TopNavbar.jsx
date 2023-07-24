@@ -2,7 +2,8 @@ import { useNavigate } from "react-router-dom";
 import useWindowsDimension from "../../hooks/useWindowsDimension";
 import { ChevronDownIcon, CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { useEffect, useState } from "react";
-import { GrClose } from "react-icons/gr";
+import { IoMdClose } from "react-icons/io";
+import { RiArrowDropDownFill } from "react-icons/ri";
 
 const linksData = [
   { name: "Home", href: "/" },
@@ -20,6 +21,7 @@ const linksData = [
 
 export default function TopNavbar() {
   const [open, setOpen] = useState(false); // to open the menu in samll screens
+  const [openChild, setOpenChild] = useState(false); // to open the sub-menu in samll screens
 
   const navigate = useNavigate();
   const { width } = useWindowsDimension();
@@ -171,20 +173,62 @@ export default function TopNavbar() {
             : "-left-full top-0 right-0 bottom-0 transition-all duration-300"
         }`}
       >
-        <div className="h-[100%] w-[75%] bg-white shadow-md"></div>
-        <div
-          className="w-[25%] !bg-[rgba(0,0,0,0.5)] h-[100%] backdrop-blur-sm relative"
-          onClick={() => setOpen(false)}
-        >
-          {open && width < 880 && (
-            <div className="text-white absolute top-4 right-5">
-              <GrClose
-                size={18}
-                color="#fff"
-              />
+        {open && width < 880 && (
+          <>
+            {" "}
+            <div className="h-[100%] w-[75%] bg-white shadow-md flex flex-col pt-2 px-1">
+              {linksData.map((list, index) => {
+                return (
+                  <>
+                    <div
+                      key={index}
+                      onClick={() => {
+                        list.children
+                          ? setOpenChild(true)
+                          : navigate(list.href);
+                      }}
+                      className={`${
+                        path === list.href ? "!bg-[rgba(0,0,0,0.2)] font-medium" : ""
+                      } pl-5 py-3 w-[100%] md:text-2xl flex justify-between pr-3`}
+                    >
+                      <span
+                        onClick={() => {
+                          setTimeout(navigate(list.href), 1000);
+                          setOpen(false);
+                        }}
+                      >
+                        {list.name}
+                      </span>
+                      {list.children ? (
+                        <>
+                          <div>
+                            <RiArrowDropDownFill
+                              size={22}
+                              color="black"
+                              className={`${
+                                openChild
+                                  ? "rotate-180 transition-all duration-300"
+                                  : "rotate-0 transition-all duration-300"
+                              }`}
+                            />
+                          </div>
+                        </>
+                      ) : null}
+                    </div>
+                  </>
+                );
+              })}
             </div>
-          )}
-        </div>
+            <div
+              className="w-[25%] !bg-[rgba(0,0,0,0.5)] h-[100%] backdrop-blur-sm relative"
+              onClick={() => setOpen(false)}
+            >
+              <div className="text-white absolute top-4 right-5">
+                <IoMdClose size={24} className="text-white md:!text-[28px] focus:!text-red-800" />
+              </div>
+            </div>
+          </>
+        )}
       </div>
       {/* -------------------------- NAVBAR FIGMA -----------------------*/}
     </>
