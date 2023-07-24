@@ -52,13 +52,17 @@ export default function TopNavbar() {
     };
   }, [prevScrollPos]);
 
+  useEffect(() => {
+    if (["ui_ux", "game_devlopment"].includes(path)) setOpenChild(true);
+  });
+
   return (
     <>
       {/* -------------------------- NAVBAR FIGMA -----------------------*/}
       <div
         className={`${
           !showNavbar
-            ? "fixed !top-0 sm:!top-0 right-0 left-0 h-[80px] w-[100%] !z-[99999] !bg-white transition-all"
+            ? "fixed !top-0 sm:!top-0 right-0 left-0 h-[80px] sm:h-[60px] w-[100%] !z-[99999] !bg-white transition-all"
             : "hidden transition-all"
         }`}
       >
@@ -169,8 +173,8 @@ export default function TopNavbar() {
       <div
         className={`${
           open && width < 880
-            ? "transition-all duration-300 bg-transparent flex fixed top-0 left-0 right-0 bottom-0 z-[99999] overflow-y-hidden"
-            : "-left-full top-0 right-0 bottom-0 transition-all duration-300"
+            ? "transition-[left] duration-500 bg-transparent flex fixed top-0 left-0 right-0 bottom-0 z-[99999]"
+            : "-left-full -translate-x-full top-0 right-0 bottom-0 duration-500 transition-[left]"
         }`}
       >
         {open && width < 880 && (
@@ -184,17 +188,20 @@ export default function TopNavbar() {
                       key={index}
                       onClick={() => {
                         list.children
-                          ? setOpenChild(true)
+                          ? setOpenChild(!openChild)
                           : navigate(list.href);
                       }}
                       className={`${
-                        path === list.href ? "!bg-[rgba(0,0,0,0.2)] font-medium" : ""
+                        path === list.href
+                          ? "!bg-[rgba(0,0,0,0.2)] font-medium"
+                          : ""
                       } pl-5 py-3 w-[100%] md:text-2xl flex justify-between pr-3`}
                     >
                       <span
                         onClick={() => {
                           setTimeout(navigate(list.href), 1000);
                           setOpen(false);
+                          setOpenChild(false);
                         }}
                       >
                         {list.name}
@@ -203,17 +210,59 @@ export default function TopNavbar() {
                         <>
                           <div>
                             <RiArrowDropDownFill
-                              size={22}
                               color="black"
                               className={`${
                                 openChild
                                   ? "rotate-180 transition-all duration-300"
                                   : "rotate-0 transition-all duration-300"
-                              }`}
+                              } sm:text-[24px] md:text-[28px]`}
                             />
                           </div>
                         </>
                       ) : null}
+                    </div>
+                    <div
+                      className={`${
+                        openChild
+                          ? "h-auto transition-transform duration-300 flex flex-col"
+                          : "h-0 transition-transform duration-300"
+                      }`}
+                    >
+                      {list.children && (
+                        <div
+                          className={`${
+                            openChild
+                              ? "h-auto transition-all duration-500 pl-6 md:text-2xl pr-6"
+                              : "!h-0 transition-all duration-500 !m-0 !p-0"
+                          } flex flex-col  w-[100%]`}
+                        >
+                          {list?.children?.map((child, index) => {
+                            return (
+                              <>
+                                <div
+                                  key={index}
+                                  onClick={() => {
+                                    navigate(child.href);
+                                    setOpen(false);
+                                  }}
+                                  className={`${
+                                    openChild
+                                      ? "block p-2 transition-all duration-200 opacity-100"
+                                      : "!p-0 transition-all duration-100 opacity-0"
+                                  }  ${
+                                    path === child.href
+                                      ? "bg-[rgba(0,0,0,0.2)] font-medium "
+                                      : ""
+                                  }`}
+                                >
+                                  {console.log(child.href)}
+                                  {child.name}
+                                </div>
+                              </>
+                            );
+                          })}
+                        </div>
+                      )}
                     </div>
                   </>
                 );
@@ -221,10 +270,16 @@ export default function TopNavbar() {
             </div>
             <div
               className="w-[25%] !bg-[rgba(0,0,0,0.5)] h-[100%] backdrop-blur-sm relative"
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                setOpen(false);
+                setOpenChild(false);
+              }}
             >
               <div className="text-white absolute top-4 right-5">
-                <IoMdClose size={24} className="text-white md:!text-[28px] focus:!text-red-800" />
+                <IoMdClose
+                  size={25}
+                  className="text-white md:!text-[30px] focus:!text-red-800"
+                />
               </div>
             </div>
           </>

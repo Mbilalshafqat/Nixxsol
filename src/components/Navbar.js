@@ -36,7 +36,7 @@ export default function Navbar({ top }) {
       {/* -------------------------- NAVBAR FIGMA -----------------------*/}
       <div style={{ fontWeight: "400" }}
         className={` ${(path === "/" || top) ? "text-[#fdfdfd]" : "text-[#161616] shadow-md"}
-          h-[100px] bg-transparent px-24 md:px-16 sm:px-6  xs:px-4 lg:text-sm md:text-xs flex justify-between place-items-center`}>
+          h-[100px] sm:h-[70px] bg-transparent px-24 md:px-16 sm:px-6  xs:px-4 lg:text-sm md:text-xs flex justify-between place-items-center`}>
         {width > 880 ?
           <><div className="flex place-items-center">
             <img onClick={() => navigate(path === "/" ? null : "/")} className="cursor-pointer xl:h-[43px] lg:h-[40px] md:h-[35px]" src={path === "/" ? "./First-Page//nixxol logo white.png" : "./First-Page//nixxol logo black.png"} alt="..." />
