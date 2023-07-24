@@ -26,7 +26,7 @@ const AboutCardData = [
 
 const AboutCard = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({ duration: 1000, once: true });
   }, []);
   return (
     <div className="aboutCard">
@@ -34,11 +34,11 @@ const AboutCard = () => {
         AboutCardData.map((item) => {
           const motion =
             item.id === 1
-              ? "fade-up-right"
+              ? "fade-right"
               : item.id === 2
               ? "fade-up"
               : item.id === 3
-              ? "fade-up-left"
+              ? "fade-left"
               : "";
 
           return (

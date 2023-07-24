@@ -7,7 +7,7 @@ const MettingCompoent = () => {
     <div className="metting_component">
       {/* ---------------- */}
       <div className="left_metting">
-        <p className="top_metting_span">Testimonials</p>
+        <p className="top_metting_span"></p>
         <h2>Book a meeting with us</h2>
         <p>
           Mattis ornare tincidunt tempus mattis mi vel auctor ipsum venenatis.

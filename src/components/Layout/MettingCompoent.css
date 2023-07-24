@@ -55,11 +55,11 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 103.8%; /* 20.76px */
+  line-height: 103.8%;
   margin-bottom: 26px;
   position: relative;
 }
-.top_metting_span::before {
+/* .top_metting_span::before {
   content: "";
   position: absolute;
   right: 390px;
@@ -68,7 +68,7 @@
   width: 65px;
   height: 1px;
   z-index: 1;
-}
+} */
 
 .left_metting h2 {
   width: 578px;
@@ -102,7 +102,6 @@
   width: 100%;
   background-color: transparent;
   border: 1px solid gray;
-  outline: none;
   padding: 12px;
   margin-bottom: 12px;
 }
@@ -110,7 +109,17 @@
 .right_metting textarea {
   border-radius: 0;
   outline: none;
+  resize: none;
   border: 1px solid gray;
+}
+/* Hide the blue outline when the textarea is focused */
+.right_metting input:focus {
+  outline: none;
+  border: 1px solid #0d6efd;
+}
+.right_metting textarea:focus {
+  outline: none;
+  border: 1px solid #0d6efd;
 }
 
 .right_metting button {
@@ -120,4 +129,104 @@
   margin-top: 24px;
   text-align: center;
   cursor: pointer;
+}
+
+/* ================== media querry  */
+@media (max-width: 1215px) {
+  .metting_component {
+    padding: 50px 50px;
+  }
+}
+
+@media (max-width: 1134px) {
+  .left_metting h2 {
+    width: 100%;
+  }
+  .left_metting p {
+    width: 100%;
+  }
+}
+@media (max-width: 1050px) {
+  .left_metting h2 {
+    font-size: 70px;
+  }
+  .left_metting p {
+    font-size: 20px;
+  }
+  .top_metting_span {
+    margin-bottom: 0px;
+  }
+}
+@media (max-width: 937px) {
+  .left_metting h2 {
+    font-size: 65px;
+  }
+}
+
+@media (max-width: 881px) {
+  .metting_component {
+    padding: 50px 20px;
+  }
+}
+
+@media (max-width: 821px) {
+  .left_metting h2 {
+    font-size: 55px;
+  }
+}
+
+@media (max-width: 768px) {
+  .metting_component {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .left_metting h2 {
+    font-size: 80px;
+    width: 90%;
+  }
+  .left_metting p {
+    width: 90%;
+  }
+}
+@media (max-width: 500px) {
+  .left_metting h2 {
+    font-size: 80px;
+    width: 100%;
+  }
+  .left_metting p {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .left_metting h2 {
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 103.8%; /* 53.976px */
+  }
+  .metting_component::before {
+    width: 50px;
+    box-shadow: 0px 0px 1500px 120px #e4252c;
+  }
+  .left_metting p {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 139.8%; /* 22.368px */
+  }
+  .metting_component {
+    padding: 50px 13px;
+  }
+}
+
+@media (max-width: 500px) {
+  .left_metting h2 {
+    font-size: 45px;
+  }
+}
+@media (max-width: 324px) {
+  .left_metting h2 {
+    font-size: 40px;
+  }
 }

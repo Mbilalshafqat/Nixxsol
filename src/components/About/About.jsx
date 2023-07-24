@@ -5,6 +5,7 @@ import Hero from "./Hero.jsx";
 import AboutCard from "./AboutCard/AboutCard";
 import WorkProcess from "./WorkProcess";
 import MettingCompoent from "../Layout/MettingCompoent";
+import Testimonial from "./Testimonial/Testimonial";
 
 const About = () => {
   return (
@@ -16,6 +17,7 @@ const About = () => {
       <AboutCard />
       <WorkProcess />
       <MettingCompoent />
+      <Testimonial />
     </>
   );
 };

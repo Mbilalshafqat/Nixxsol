@@ -1,19 +1,9 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
 
 const WorkProcess = () => {
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
   return (
     <>
-      <div
-        className="hero_facts py-12"
-        data-aos="fade-up"
-        data-aos-offset="300"
-        fade-aos-delay="300"
-      >
+      <div className="hero_facts py-12">
         <div className="left_facts">
           <h2>Our Work Process</h2>
         </div>

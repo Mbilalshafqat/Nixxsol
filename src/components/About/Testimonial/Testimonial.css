@@ -1,0 +1,463 @@
+.testimonial {
+  text-align: left;
+  padding: 150px 0px 100px 150px;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  justify-content: center; /* Center horizontally */
+  align-items: end; /* Center vertically */
+}
+
+.testimonial .left h2 {
+  color: #242424;
+  font-family: Proxima Nova;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 106.3%; /* 85.04px */
+}
+.testimonial .left p {
+  color: #1c1c1c;
+  font-family: Proxima Nova;
+  font-size: 18.509px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23.134px; /* 124.991% */
+  margin-bottom: 120px;
+}
+.carousal_main {
+  /* padding: 20px; */
+  left: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+.carousal_track {
+  width: 650px;
+  display: flex;
+  align-items: center;
+  height: 260px;
+}
+
+.carousal_slide_box {
+  width: 650px !important;
+  height: 250px;
+  margin: 0px 20px;
+  border-radius: 23px;
+  border: 1px solid gray;
+  box-sizing: border-box;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 25px;
+  gap: 19px;
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+/* .carousal_slide_box::before {
+  content: "";
+  position: absolute;
+  left: -101%;
+  top: 2px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 1;
+} */
+.button {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+  width: 100%;
+  margin-top: 30px;
+  padding-left: 100px;
+}
+.button button {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: #e92129;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+.button svg {
+  font-size: 25px;
+}
+.non_active {
+  overflow: hidden;
+  height: 200px;
+  margin-top: 50px;
+  transition: all 0.5s ease;
+}
+
+.carousal_box_left img {
+  width: 102px;
+  height: 102px;
+  object-fit: contain;
+  border-radius: 100%;
+}
+.carousal_box_right {
+}
+.carousal_box_right h2 {
+  color: #e4252c;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Proxima Nova;
+  font-size: 36.267px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.carousal_box_right p {
+  color: #000;
+  font-family: Proxima Nova;
+  font-size: 20.309px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26.022px; /* 128.125% */
+}
+
+/* =============================  */
+@media (max-width: 1360px) {
+  .testimonial {
+    padding: 150px 0px 100px 100px;
+  }
+}
+@media (max-width: 1280px) {
+  .testimonial {
+    padding: 150px 0px 100px 70px;
+    grid-template-columns: 0.3fr 1fr;
+  }
+}
+@media (max-width: 1250px) {
+  .carousal_slide_box {
+    width: 600px !important;
+    margin: 0px 10px;
+    padding: 20px;
+    gap: 15px;
+  }
+  .non_active {
+    overflow: hidden;
+    height: 210px;
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 1170px) {
+  .testimonial {
+    align-items: center;
+  }
+  .testimonial .left h2 {
+    color: #242424;
+    font-family: Proxima Nova;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 106.3%; /* 85.04px */
+  }
+}
+@media (max-width: 1100px) {
+  .carousal_slide_box {
+    width: 550px !important;
+    margin: 0px 10px;
+    padding: 10px;
+    gap: 10px;
+    height: 220px;
+  }
+  .non_active {
+    overflow: hidden;
+    height: 200px;
+    margin-top: 50px;
+  }
+  .testimonial .carousal_slide_box p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 1050px) {
+  .testimonial {
+    padding: 150px 0px 100px 20px;
+    grid-template-columns: 0.3fr 1fr;
+  }
+}
+
+@media (max-width: 1000px) {
+  .carousal_slide_box {
+    width: 500px !important;
+    margin: 0px 10px;
+    height: 250px;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .non_active {
+    overflow: hidden;
+    height: 200px;
+    margin-top: 50px;
+  }
+  .carousal_box_left img {
+    border: 2px solid red;
+  }
+  .carousal_box_right p {
+    font-size: 13px;
+  }
+  .carousal_box_right h2 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 950px) {
+  .testimonial .left h2 {
+    font-size: 60px;
+  }
+}
+@media (max-width: 900px) {
+  .carousal_slide_box {
+    width: 450px !important;
+  }
+  .non_active {
+    overflow: hidden;
+    height: 200px;
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 850px) {
+  .testimonial {
+    grid-template-columns: 1fr;
+    gap: 0px;
+    justify-content: center;
+    align-items: center;
+  }
+  .testimonial .left h2 {
+    font-size: 80px;
+    margin-bottom: 10px;
+  }
+  .testimonial .left p {
+    font-size: 22px;
+  }
+  .carousal_slide_box {
+    width: 650px !important;
+    height: 250px;
+    margin: 12px;
+  }
+  .non_active {
+    height: 200px;
+    margin-top: 50px;
+  }
+  .carousal_box_left {
+    justify-content: center;
+    align-items: center;
+  }
+  .carousal_slide_box h2 {
+    font-size: 35px;
+    margin-bottom: 6px;
+  }
+  .carousal_slide_box p {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 750px) {
+  .carousal_slide_box {
+    width: 550px !important;
+    height: 250px;
+    margin: 12px;
+  }
+  .non_active {
+    height: 200px;
+    margin-top: 50px;
+  }
+}
+@media (max-width: 650px) {
+  .carousal_track {
+    height: 270px;
+  }
+  .carousal_slide_box {
+    width: 75% !important;
+    height: 270px;
+    margin: 12px;
+  }
+  .non_active {
+    height: 200px;
+    margin-top: 50px;
+  }
+  .button {
+    padding-left: 0px;
+  }
+}
+@media (max-width: 600px) {
+  .carousal_track {
+    height: 270px;
+  }
+  .carousal_slide_box {
+    width: 450px !important;
+    height: 270px;
+    margin: 12px;
+    margin: 0px 10px;
+    margin-left: 5px;
+  }
+  .non_active {
+    height: 200px;
+    margin-top: 50px;
+  }
+}
+@media (max-width: 520px) {
+  .carousal_track {
+    height: 300px;
+  }
+  .carousal_slide_box {
+    width: 410px !important;
+    height: 300px;
+    margin: 12px;
+    margin: 0px 10px;
+    margin-left: 5px;
+  }
+  .non_active {
+    height: 200px;
+    margin-top: 50px;
+  }
+  .carousal_slide_box p {
+    font-size: 17px !important;
+  }
+}
+
+@media (max-width: 504px) {
+  .testimonial .left h2 {
+    font-size: 52px;
+  }
+  .testimonial .left p {
+    font-size: 18px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 474px) {
+  .carousal_track {
+    height: 300px;
+  }
+  .carousal_slide_box {
+    width: 370px !important;
+    height: 270px;
+    margin: 12px;
+    margin: 0px 10px;
+    margin-left: 5px;
+  }
+  .non_active {
+    height: 200px;
+    margin-top: 50px;
+  }
+  .carousal_slide_box p {
+    font-size: 15px !important;
+  }
+  .carousal_slide_box img {
+    width: 54.58px;
+    height: 54.58px;
+  }
+  .carousal_slide_box h2 {
+    font-size: 18.252px;
+  }
+}
+
+@media (max-width: 474px) {
+  .carousal_track {
+    height: 300px;
+  }
+  .carousal_slide_box {
+    width: 330px !important;
+    height: 300px;
+    margin: 12px;
+    margin: 0px 10px;
+    margin-left: 5px;
+  }
+  .non_active {
+    height: 200px;
+    margin-top: 50px;
+  }
+}
+@media (max-width: 400px) {
+  .carousal_track {
+    height: 300px;
+  }
+  .carousal_slide_box {
+    width: 300px !important;
+    height: 300px;
+    margin: 12px;
+    margin: 0px 10px;
+    margin-left: 5px;
+  }
+  .non_active {
+    height: 200px;
+    margin-top: 50px;
+  }
+}
+@media (max-width: 380px) {
+  .carousal_track {
+    height: 350px;
+  }
+  .carousal_slide_box {
+    width: 280px !important;
+    margin-left: 0px;
+    height: 350px;
+    margin: 12px;
+    margin: 0px 10px;
+    margin-left: 5px;
+  }
+  .non_active {
+    height: 200px;
+    margin-top: 50px;
+  }
+}
+@media (max-width: 360px) {
+  .carousal_track {
+    height: 350px;
+  }
+  .carousal_slide_box {
+    width: 260px !important;
+    margin-left: 0px;
+    height: 350px;
+    margin: 12px;
+    margin: 0px 10px;
+    margin-left: 5px;
+  }
+  .non_active {
+    height: 200px;
+    margin-top: 50px;
+  }
+}
+@media (max-width: 360px) {
+  .carousal_track {
+    height: 400px;
+  }
+  .carousal_slide_box {
+    width: 250px !important;
+    margin-left: 0px;
+    height: 400px;
+    margin: 12px;
+    margin: 0px 10px;
+    margin-left: 5px;
+  }
+  .non_active {
+    height: 200px;
+    margin-top: 50px;
+  }
+}
+@media (max-width: 360px) {
+  .carousal_track {
+    height: 400px;
+  }
+  .carousal_slide_box {
+    width: 240px !important;
+    margin-left: 0px;
+    height: 400px;
+    margin: 12px;
+    margin: 0px 10px;
+    margin-left: 5px;
+  }
+  .non_active {
+    height: 200px;
+    margin-top: 50px;
+  }
+}
