@@ -103,10 +103,10 @@ const Testimonial = () => {
             })}
         </div>
         <div className="button">
-          <button onClick={nextSlide}>
+          <button onClick={prevSlide}>
             <IoIosArrowBack />
           </button>
-          <button onClick={prevSlide}>
+          <button onClick={nextSlide}>
             <IoIosArrowForward />
           </button>
         </div>
