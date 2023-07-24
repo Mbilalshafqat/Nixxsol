@@ -14,12 +14,12 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route exact path="/" element={<FirstPage />} />
-          <Route exact path="/ItServices" element={<SecondPage />} />
-          <Route exact path="/about" element={<About />} />
-          <Route exact path="/portfolio" element={<ForthPage />} />
-          <Route exact path="/fifthPage" element={<FifthPage />} />
-          <Route exact path="/sixthPage" element={<SixthPage />} />
+          <Route exact path='/' element={<FirstPage />} />
+          <Route exact path='/it_services' element={<SecondPage />}/>
+          <Route exact path='/about' element={<ThirdPage />}/>
+          <Route exact path='/portfolio' element={<ForthPage />}/>
+          <Route exact path='/ui_ux' element={<FifthPage />}/>
+          <Route exact path='/game_devlopment' element={<SixthPage />}/>
         </Routes>
         <Footer />
       </Router>
