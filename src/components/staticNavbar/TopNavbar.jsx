@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import useWindowsDimension from "../../hooks/useWindowsDimension";
-import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { ChevronDownIcon, CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { useEffect, useState } from "react";
-import { animateScroll as scroll } from "react-scroll";
+import { GrClose } from "react-icons/gr";
 
 const linksData = [
   { name: "Home", href: "/" },
@@ -153,8 +153,9 @@ export default function TopNavbar() {
                 />
               </div>
               <div
-                onClick={() => {
+                onClick={(e) => {
                   setOpen(true);
+                  e.preventDefault();
                 }}
               >
                 <HamburgerIcon boxSize={6} />
@@ -165,7 +166,7 @@ export default function TopNavbar() {
       </div>
       <div
         className={`${
-          open
+          open && width < 880
             ? "transition-all duration-300 bg-transparent flex fixed top-0 left-0 right-0 bottom-0 z-[99999] overflow-y-hidden"
             : "-left-full top-0 right-0 bottom-0 transition-all duration-300"
         }`}
@@ -175,7 +176,14 @@ export default function TopNavbar() {
           className="w-[25%] !bg-[rgba(0,0,0,0.5)] h-[100%] backdrop-blur-sm relative"
           onClick={() => setOpen(false)}
         >
-          <div className=""></div>
+          {open && width < 880 && (
+            <div className="text-white absolute top-4 right-5">
+              <GrClose
+                size={18}
+                color="#fff"
+              />
+            </div>
+          )}
         </div>
       </div>
       {/* -------------------------- NAVBAR FIGMA -----------------------*/}
