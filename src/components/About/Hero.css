@@ -30,7 +30,7 @@
 
 /* -------------------------------------------------------- hero_facts */
 .hero_facts {
-  padding: 50px 90px;
+  padding: 100px 90px;
   text-align: left;
   justify-self: center;
   align-self: center;
@@ -137,7 +137,7 @@
 
 @media (max-width: 1050px) {
   .hero_facts {
-    padding: 50px 50px;
+    padding: 100px 50px !important;
   }
   .Hero_section {
     padding: 50px 50px;
@@ -193,10 +193,14 @@
 
 @media (max-width: 600px) {
   .hero_facts {
-    padding: 30px 20px;
+    padding: 60px 10px;
   }
   .Hero_section {
-    padding: 30px 20px;
+    padding: 30px 1px;
+  }
+  .hero_facts h2 {
+    font-size: 56px;
+    /* width: 250px; */
   }
 }
 
@@ -209,6 +213,9 @@
   }
   .worg_process .resposive {
     display: block;
+  }
+  .facts_numbring h2 {
+    font-size: 40px;
   }
 }
 
@@ -227,7 +234,7 @@
     font-size: 18px;
   }
   .hero_facts {
-    gap: 20px;
+    gap: 10px;
   }
   .right_facts h3 {
     font-size: 18px;
@@ -248,6 +255,9 @@
     padding: 30px 10px;
   }
   .right_facts {
-    gap: 20px;
+    gap: 10px !important;
+  }
+  .hero_facts {
+    padding: 50px 10px !important;
   }
 }

@@ -1,49 +1,35 @@
 import React, { useEffect, useState } from "react";
-import "../About/Testimonial/Testimonial.css";
+import "./HomeTestimonial.css";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const slides = [
   {
     id: 0,
-    img: "./First-page/adam.png",
-    name: "Adam Smith",
-    dis: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Imperdiet proin ut urna sit. Varius sed euismod at est, commodo sociis dolor. Elit, suspendisse leo id in eu ut arcu, malesuada. Nibh suspendisse mauris amet, facilisi. Elit, suspendisse leo id in eu ut arcu, malesuada. Nibh suspendisse mauris amet, facilisi.”",
+    img: "./First-page/p1.png",
   },
   {
     id: 1,
-    img: "./First-page/adam.png",
-    name: "Adam Smith",
-    dis: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Imperdiet proin ut urna sit. Varius sed euismod at est, commodo sociis dolor. Elit, suspendisse leo id in eu ut arcu, malesuada. Nibh suspendisse mauris amet, facilisi. Elit, suspendisse leo id in eu ut arcu, malesuada. Nibh suspendisse mauris amet, facilisi.”",
+    img: "https://images.pexels.com/photos/6498775/pexels-photo-6498775.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
     id: 2,
-    img: "./First-page/adam.png",
-    name: "Adam Smith",
-    dis: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Imperdiet proin ut urna sit. Varius sed euismod at est, commodo sociis dolor. Elit, suspendisse leo id in eu ut arcu, malesuada. Nibh suspendisse mauris amet, facilisi. Elit, suspendisse leo id in eu ut arcu, malesuada. Nibh suspendisse mauris amet, facilisi.”",
+    img: "https://images.pexels.com/photos/2708981/pexels-photo-2708981.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
     id: 3,
-    img: "./First-page/adam.png",
-    name: "Adam Smith",
-    dis: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Imperdiet proin ut urna sit. Varius sed euismod at est, commodo sociis dolor. Elit, suspendisse leo id in eu ut arcu, malesuada. Nibh suspendisse mauris amet, facilisi. Elit, suspendisse leo id in eu ut arcu, malesuada. Nibh suspendisse mauris amet, facilisi.”",
+    img: "https://images.pexels.com/photos/9072208/pexels-photo-9072208.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
     id: 4,
-    img: "./First-page/adam.png",
-    name: "Adam Smith",
-    dis: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Imperdiet proin ut urna sit. Varius sed euismod at est, commodo sociis dolor. Elit, suspendisse leo id in eu ut arcu, malesuada. Nibh suspendisse mauris amet, facilisi. Elit, suspendisse leo id in eu ut arcu, malesuada. Nibh suspendisse mauris amet, facilisi.”",
+    img: "https://images.pexels.com/photos/12300693/pexels-photo-12300693.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
     id: 5,
-    img: "./First-page/adam.png",
-    name: "Adam Smith",
-    dis: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Imperdiet proin ut urna sit. Varius sed euismod at est, commodo sociis dolor. Elit, suspendisse leo id in eu ut arcu, malesuada. Nibh suspendisse mauris amet, facilisi. Elit, suspendisse leo id in eu ut arcu, malesuada. Nibh suspendisse mauris amet, facilisi.”",
+    img: "./First-page/p1.png",
   },
   {
     id: 6,
-    img: "./First-page/adam.png",
-    name: "Adam Smith",
-    dis: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Imperdiet proin ut urna sit. Varius sed euismod at est, commodo sociis dolor. Elit, suspendisse leo id in eu ut arcu, malesuada. Nibh suspendisse mauris amet, facilisi. Elit, suspendisse leo id in eu ut arcu, malesuada. Nibh suspendisse mauris amet, facilisi.”",
+    img: "https://images.pexels.com/photos/9281229/pexels-photo-9281229.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
 ];
 
@@ -63,17 +49,18 @@ const HomeTestimonial = () => {
   };
 
   return (
-    <div className="testimonial">
+    <div className="testimonial_home">
       <div className="left">
-        <h2>Testimonials</h2>
+        <h2>Portfolio</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur. Nunc viverra faucibus praesent
           elementum commodo.
         </p>
+        <button>More Portfolio</button>
       </div>
       {/* ---------------------------- carousal  */}
-      <div className="carousal_main">
-        <div className="carousal_track">
+      <div className="carousal_main_home h-[400px]">
+        <div className="carousal_track_home h-[400px]">
           {slides &&
             slides.map((item, index) => {
               return (
@@ -81,10 +68,10 @@ const HomeTestimonial = () => {
                   key={item.id}
                   className={`${
                     item.id === currentIndex
-                      ? "carousal_slide_box"
+                      ? "carousal_slide_box_home"
                       : item.id === currentIndex + 1
-                      ? "non_active carousal_slide_box"
-                      : "carousal_slide_box opacity-0"
+                      ? "non_active_home carousal_slide_box_home"
+                      : "carousal_slide_box_home opacity-0"
                   }`}
                   style={{
                     transform: `translateX(-${currentIndex * 103.5}%)`,
@@ -94,10 +81,6 @@ const HomeTestimonial = () => {
                   {/* <div className="carousal_box_left"> */}
                   <img src={item.img} alt="" />
                   {/* </div> */}
-                  <div className="carousal_box_right">
-                    <h2>{item.name}</h2>
-                    <p>{item.dis}</p>
-                  </div>
                 </div>
               );
             })}

@@ -8,11 +8,13 @@ import SixthPage from "./components/SixthPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import About from "./components/About/About";
+import { ScrollToTop } from "react-router-scroll-to-top";
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route exact path='/' element={<FirstPage />} />
           <Route exact path='/it_services' element={<SecondPage />}/>
