@@ -1,6 +1,7 @@
 import "./App.css";
 import FirstPage from "./components/FirstPage";
 import SecondPage from "./components/SecondPage";
+import ThirdPage from "./components/ThirdPage";
 import ForthPage from "./components/ForthPage";
 import FifthPage from "./components/FifthPage";
 import SixthPage from "./components/SixthPage";
