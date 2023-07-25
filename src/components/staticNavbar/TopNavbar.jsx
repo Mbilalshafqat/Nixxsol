@@ -179,7 +179,7 @@ export default function TopNavbar() {
               : ""
           }`}
         >
-          <AnimatePresence onExitComplete={() => null} mode={"wait"}>
+          <AnimatePresence>
             {open && width < 880 && (
               <>
                 {" "}
@@ -188,7 +188,7 @@ export default function TopNavbar() {
                   initial={{ width: 0 }}
                   animate={{ width: "75%" }}
                   exit={{ width: 0 }}
-                  className="h-[100%] bg-white shadow-md flex flex-col pt-2 px-1"
+                  className="h-[100%] bg-white shadow-md flex flex-col pt-2 px-1 absolute z-[99999\]"
                 >
                   {linksData.map((list, index) => {
                     return (
@@ -280,9 +280,9 @@ export default function TopNavbar() {
                 <motion.div
                   key={"sub-menu"}
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+                  animate={{ opacity: 1, transition:"all 0.2s ease-in" }}
                   exit={{ opacity: 0 }}
-                  className="absolute !bg-[rgba(0,0,0,0.5)] h-[100%] backdrop-blur-sm w-[100%] z-[-1]"
+                  className="absolute !bg-[rgba(0,0,0,0.5)] h-[100%] backdrop-blur-sm w-[100%] z-[9999]"
                   onClick={() => {
                     setOpen(false);
                     setOpenChild(false);
