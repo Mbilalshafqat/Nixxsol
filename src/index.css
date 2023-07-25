@@ -75,8 +75,8 @@ body {
 }
 
 .customTransition{
-  transition: 0.3s all linear;
-  -o-transition: 0.3s all linear;
-  -webkit-transition: 0.3s all linear;
+  transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
+  -webkit-transition: 0.3s all ease-in-out;
 }
 

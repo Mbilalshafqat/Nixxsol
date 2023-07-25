@@ -13,8 +13,8 @@ const linksData = [
   { name: "About", href: "/about" },
   {
     name: "IT Services", href: "/it_services", children: [
-      { name: "UI/UX Design", href: "ui_ux" },
-      { name: "Game Devlopment", href: "game_devlopment" }
+      { name: "UI/UX Design", href: "/ui_ux" },
+      { name: "Game Devlopment", href: "/game_devlopment" }
     ]
   },
   { name: "Portfolio", href: "/portfolio" },
@@ -30,7 +30,7 @@ export default function Navbar({ top }) {
   const [openChild, setOpenChild] = useState(false);
 
   useEffect(() => {
-    if (["ui_ux", "game_devlopment"].includes(path)) { setOpenChild(true); console.log(path, openChild) };
+    if (["/ui_ux", "/game_devlopment"].includes(path)) { setOpenChild(true); console.log(path, openChild) };
   }, [open]);
 
   function handleItClick(list) {
@@ -56,28 +56,36 @@ export default function Navbar({ top }) {
                       <div onMouseOver={() => list.children ? setHover(true) : null} onMouseOut={() => list.children ? setHover(false) : null} key={index} className="relative flex place-items-center"
                       >
                         <div onClick={() => handleItClick(list.href)}
-                          className={`${list.href === path ? "font-bold" : "cursor-pointer"} py-1 flex justify-between place-items-center gap-2`}>
+                          className={`${list.href === path ? "font-bold" : "cursor-pointer"} !h-4 overflow-hidden py-1 flex justify-between place-items-center gap-2`}>
                           <span>{list.name}</span>
                           {list.children ?
                             <span className="">
-                              <ChevronDownIcon boxSize={5} className={`${hover ? "rotate-180 transition-all" : "transition-all"}`} />
+                              <ChevronDownIcon boxSize={5} className={`${hover ? "rotate-180 customTransition" : "customTransition"}`} />
                             </span>
                             : null}
                         </div>
-                        {list.children && hover ? <div
-                          className={`${hover ? "absolute z-[99999] transition-all rounded-[5px] bottom-[-230%] text-black bg-white w-[200%] shadow-md grid cursor-pointer text-sm opacity-100" : "opacity-0 bottom-[260%] transition-all"}`}>
-                          {
-                            list.children.map((child, index) => {
+                        {list.children && hover ? (
+                          <div
+                            className={`${hover
+                                ? "absolute customTransition z-[999999] rounded-[5px] bottom-[-450%] text-black bg-white w-[200%] shadow-md grid cursor-pointer text-sm opacity-100"
+                                : "opacity-0 bottom-[270%] customTransition"
+                              }`}
+                          >
+                            {list.children.map((child, index) => {
                               return (
                                 <>
-                                  <div key={index} className={`px-2 py-2 text-left font-regular hover:font-medium hover:!px-4 hover:transition-all transition-all`} onClick={() => navigate(child.href)}>
+                                  <div
+                                    key={index}
+                                    className={`px-2 py-2 text-left font-regular hover:font-medium hover:!px-4 hover customTransition customTransition`}
+                                    onClick={() => navigate(child.href)}
+                                  >
                                     {child.name}
                                   </div>
                                 </>
-                              )
-                            })
-                          }
-                        </div> : null}
+                              );
+                            })}
+                          </div>
+                        ) : null}
                       </div >
                     </>
                   )
@@ -132,7 +140,7 @@ export default function Navbar({ top }) {
                             : navigate(list.href);
                         }}
                         className={`${open ? "opacity-100 customTransition" : "hidden"} ${path === list.href
-                          ? "!bg-[rgba(0,0,0,0.2)] font-medium"
+                          ? "!bg-[rgba(0,0,0,0.2)] font-medium roundeded-[4px]"
                           : ""
                           } pl-5 py-3 w-[100%] md:text-2xl flex justify-between pr-3`}
                       >
@@ -166,11 +174,11 @@ export default function Navbar({ top }) {
                           }`}
                       >
                         {list.children && (
-                          <div
+                          <div style={open ? null : { overflow: "hidden", display: "none" }}
                             className={`${openChild
-                              ? "h-auto customTransition pl-6 md:text-2xl pr-6"
+                              ? "sm:h-20 xs:h-20 md:h-32 customTransition pl-6 md:text-2xl pr-6"
                               : "!h-0 customTransition !m-0 !p-0"
-                              } flex flex-col  w-[100%]`}
+                              } flex flex-col w-[100%]`}
                           >
                             {list?.children?.map((child, index) => {
                               return (
@@ -181,13 +189,13 @@ export default function Navbar({ top }) {
                                       navigate(child.href);
                                       setOpen(false);
                                     }}
-                                    style={path === child.href ? { backgroundColor: "rgba(0,0,0,0.5" } : null}
-                                    className={`${openChild
-                                      ? "block p-2 customTransition opacity-100 overflow-hidden"
-                                      : "!p-0 customTransition opacity-0 overflow-hidden"
-                                      }`}
+                                    style={path === child.href ? { backgroundColor: "rgba(0,0,0,0.2)" } : null}
+                                    className={`
+                                    ${openChild
+                                        ? "block pl-5 customTransition opacity-100"
+                                        : "!p-0 customTransition opacity-0"
+                                      } flex-1 flex place-items-center !overflow-hidden rounded-[4px] w-[100%]`}
                                   >
-                                    {console.log(path === child.href)}
                                     {child.name}
                                   </div>
                                 </>
