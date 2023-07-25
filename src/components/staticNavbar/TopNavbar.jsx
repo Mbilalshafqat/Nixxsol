@@ -188,7 +188,7 @@ export default function TopNavbar() {
                   initial={{ width: 0 }}
                   animate={{ width: "75%" }}
                   exit={{ width: 0 }}
-                  className="h-[100%] bg-white shadow-md flex flex-col pt-2 px-1 absolute z-[99999\]"
+                  className="h-[100%] bg-white shadow-md flex flex-col pt-2 px-1 absolute z-[99999]"
                 >
                   {linksData.map((list, index) => {
                     return (
