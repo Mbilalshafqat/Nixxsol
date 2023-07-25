@@ -62,7 +62,7 @@ const cardsdata = [
 export default function Hero() {
   return (
     <>
-      {/* <Main /> */}
+      <Main />
       <AbouCompanyNumber
         title={title}
         discriptrion={discription}

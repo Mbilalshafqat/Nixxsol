@@ -92,6 +92,7 @@
   color: white;
   cursor: pointer;
   font-weight: bold;
+  margin-top: 20px;
 }
 
 .common_card button svg {
