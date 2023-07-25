@@ -193,10 +193,14 @@
 
 @media (max-width: 600px) {
   .hero_facts {
-    padding: 60px 20px;
+    padding: 60px 10px;
   }
   .Hero_section {
-    padding: 30px 20px;
+    padding: 30px 1px;
+  }
+  .hero_facts h2 {
+    font-size: 56px;
+    /* width: 250px; */
   }
 }
 
@@ -209,6 +213,9 @@
   }
   .worg_process .resposive {
     display: block;
+  }
+  .facts_numbring h2 {
+    font-size: 40px;
   }
 }
 
@@ -249,5 +256,8 @@
   }
   .right_facts {
     gap: 10px !important;
+  }
+  .hero_facts {
+    padding: 50px 10px !important;
   }
 }
