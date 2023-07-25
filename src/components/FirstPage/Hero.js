@@ -7,12 +7,27 @@ import Testimonials from "./Testimonials";
 import BookMeeting from "./BookMeeting";
 import Partnership from "./Partnership";
 import Testimonial from "../About/Testimonial/Testimonial";
+import MettingCompoent from "../../Layout/ConatctUs/MettingCompoent";
+import "./Hero.css";
+import AbouCompanyNumber from "../About/AboutCard/AbouCompanyNumber";
+
+const title = "About Company";
+
+const discription =
+  "Lorem ipsum dolor sit amet consectetur. Vestibulum nascetur vitae sapien";
+
+const secondDiscription =
+  "Mattis ornare tincidunt tempus mattis mi vel auctor ipsum venenatis.Tellus nunc scelerisque dictum sagittis euismod urna egestas quam. Inornare nisl leo odio magna.";
 
 export default function Hero() {
   return (
     <>
       <Main />
-      <CompanyStats />
+      <AbouCompanyNumber
+        title={title}
+        discriptrion={discription}
+        secondDiscription={secondDiscription}
+      />
 
       <div className={styles.section1}>
         <About />
@@ -45,8 +60,8 @@ export default function Hero() {
         <Testimonial />
       </div>
 
-      <div className={styles.section5}>
-        <BookMeeting />
+      <div>
+        <MettingCompoent />
       </div>
 
       <div className={styles.section6}>
@@ -64,7 +79,7 @@ export default function Hero() {
         >
           <h1
             style={{ fontSize: "80px", fontWeight: "700" }}
-            className="card-title dynamic-spacing"
+            className="card-title card_title dynamic-spacing"
           >
             BEING CREATIVE
           </h1>
