@@ -64,7 +64,7 @@ export default function TopNavbar() {
       <div
         className={`${
           !showNavbar
-            ? "fixed !top-0 sm:!top-0 right-0 left-0 h-[80px] sm:h-[60px] w-[100%] !z-[99999] !bg-white customTransition"
+            ? "fixed !top-0 sm:!top-0 right-0 left-0 h-[100px] sm:h-[70px] w-[100%] !z-[99999] !bg-white customTransition"
             : "hidden customTransition"
         }`}
       >
@@ -121,7 +121,7 @@ export default function TopNavbar() {
                           <div
                             className={`${
                               hover
-                                ? "absolute customTransition rounded-[5px] bottom-[-230%] text-black bg-white w-[200%] shadow-md grid cursor-pointer text-sm opacity-100"
+                                ? "absolute customTransition z-[999999] rounded-[5px] bottom-[-230%] text-black bg-white w-[200%] shadow-md grid cursor-pointer text-sm opacity-100"
                                 : "opacity-0 bottom-[270%] customTransition"
                             }`}
                           >

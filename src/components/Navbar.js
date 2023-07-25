@@ -65,7 +65,7 @@ export default function Navbar({ top }) {
                             : null}
                         </div>
                         {list.children && hover ? <div
-                          className={`${hover ? "absolute transition-all rounded-[5px] bottom-[-230%] text-black bg-white w-[200%] shadow-md grid cursor-pointer text-sm opacity-100" : "opacity-0 bottom-[260%] transition-all"}`}>
+                          className={`${hover ? "absolute z-[99999] transition-all rounded-[5px] bottom-[-230%] text-black bg-white w-[200%] shadow-md grid cursor-pointer text-sm opacity-100" : "opacity-0 bottom-[260%] transition-all"}`}>
                           {
                             list.children.map((child, index) => {
                               return (
