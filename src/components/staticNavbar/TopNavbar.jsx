@@ -13,8 +13,8 @@ const linksData = [
     name: "IT Services",
     href: "/it_services",
     children: [
-      { name: "UI/UX Design", href: "ui_ux" },
-      { name: "Game Devlopment", href: "game_devlopment" },
+      { name: "UI/UX Design", href: "/ui_ux" },
+      { name: "Game Devlopment", href: "/game_devlopment" },
     ],
   },
   { name: "Portfolio", href: "/portfolio" },
@@ -54,8 +54,8 @@ export default function TopNavbar() {
   }, [prevScrollPos]);
 
   useEffect(() => {
-    if (["ui_ux", "game_devlopment"].includes(path)) setOpenChild(true);
-  });
+    if (["/ui_ux", "/game_devlopment"].includes(path)) setOpenChild(true);
+  }, [open]);
 
   return (
     <>
@@ -172,133 +172,139 @@ export default function TopNavbar() {
           )}
         </div>
       </div>
-        <div
-          className={`${
-            open && width < 880
-              ? "bg-transparent flex fixed top-0 left-0 right-0 bottom-0 z-[99999]"
-              : ""
-          }`}
-        >
-          <AnimatePresence>
-            {open && width < 880 && (
-              <>
-                {" "}
-                <motion.div
-                  key={"menu"}
-                  initial={{ width: 0 }}
-                  animate={{ width: "75%" }}
-                  exit={{ width: 0 }}
-                  className="h-[100%] bg-white shadow-md flex flex-col pt-2 px-1 absolute z-[99999]"
-                >
-                  {linksData.map((list, index) => {
-                    return (
-                      <>
-                        <div
-                          key={index}
+      <div
+        className={`${
+          open && width < 880
+            ? "bg-transparent flex fixed top-0 left-0 right-0 bottom-0 z-[99999]"
+            : ""
+        }`}
+      >
+        <AnimatePresence>
+          {open && width < 880 && (
+            <>
+              {" "}
+              <motion.div
+                key={"menu"}
+                initial={{ width: "0%", padding: 0 }}
+                animate={{ width: "75%" }}
+                exit={{ width: "0%", padding: "0 important" }}
+                className="h-[100%] bg-white shadow-md flex flex-col pt-2 px-1 absolute z-[99999]"
+              >
+                {linksData.map((list, index) => {
+                  return (
+                    <>
+                      <div
+                        key={index}
+                        onClick={() => {
+                          list.children
+                            ? setOpenChild(!openChild)
+                            : navigate(list.href);
+                        }}
+                        className={`
+                        ${open ? "" : "hidden"}
+                         ${
+                           path === list.href
+                             ? "!bg-[rgba(0,0,0,0.2)] font-medium"
+                             : ""
+                         } pl-5 py-3 w-[100%] md:text-2xl flex justify-between pr-3`}
+                      >
+                        <span
                           onClick={() => {
-                            list.children
-                              ? setOpenChild(!openChild)
-                              : navigate(list.href);
+                            setTimeout(navigate(list.href), 1000);
+                            setOpen(false);
+                            setOpenChild(false);
                           }}
-                          className={`${
-                            path === list.href
-                              ? "!bg-[rgba(0,0,0,0.2)] font-medium"
-                              : ""
-                          } pl-5 py-3 w-[100%] md:text-2xl flex justify-between pr-3`}
                         >
-                          <span
-                            onClick={() => {
-                              setTimeout(navigate(list.href), 1000);
-                              setOpen(false);
-                              setOpenChild(false);
-                            }}
-                          >
-                            {list.name}
-                          </span>
-                          {list.children ? (
-                            <>
-                              <div>
-                                <RiArrowDropDownFill
-                                  color="black"
-                                  className={`${
-                                    openChild
-                                      ? "rotate-180 customTransition"
-                                      : "rotate-0 customTransition"
-                                  } sm:text-[24px] md:text-[28px]`}
-                                />
-                              </div>
-                            </>
-                          ) : null}
-                        </div>
-                        <div
-                          className={`${
-                            openChild
-                              ? "h-auto transition-transform flex flex-col"
-                              : "h-0 transition-transform"
-                          }`}
-                        >
-                          {list.children && (
-                            <div
-                              className={`${
-                                openChild
-                                  ? "h-auto customTransition pl-6 md:text-2xl pr-6"
-                                  : "!h-0 customTransition !m-0 !p-0"
-                              } flex flex-col  w-[100%]`}
-                            >
-                              {list?.children?.map((child, index) => {
-                                return (
-                                  <>
-                                    <div
-                                      key={index}
-                                      onClick={() => {
-                                        navigate(child.href);
-                                        setOpen(false);
-                                      }}
-                                      className={`${
-                                        openChild
-                                          ? "block p-2 customTransition opacity-100"
-                                          : "!p-0 customTransition opacity-0"
-                                      }  ${
-                                        path === child.href
-                                          ? "bg-[rgba(0,0,0,0.2)] font-medium "
-                                          : ""
-                                      }`}
-                                    >
-                                      {console.log(child.href)}
-                                      {child.name}
-                                    </div>
-                                  </>
-                                );
-                              })}
+                          {list.name}
+                        </span>
+                        {list.children ? (
+                          <>
+                            <div>
+                              <RiArrowDropDownFill
+                                color="black"
+                                className={`${
+                                  openChild
+                                    ? "rotate-180 customTransition"
+                                    : "rotate-0 customTransition"
+                                } sm:text-[24px] md:text-[28px]`}
+                              />
                             </div>
-                          )}
-                        </div>
-                      </>
-                    );
-                  })}
-                </motion.div>
-                <motion.div
-                  key={"sub-menu"}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1, transition:"all 0.2s ease-in" }}
-                  exit={{ opacity: 0 }}
-                  className="absolute !bg-[rgba(0,0,0,0.5)] h-[100%] backdrop-blur-sm w-[100%] z-[9999]"
-                  onClick={() => {
-                    setOpen(false);
-                    setOpenChild(false);
-                  }}
-                >
-                  <div className="text-white absolute top-4 right-5">
-                    <IoMdClose
-                      size={25}
-                      className="text-white md:!text-[30px] focus:!text-red-800"
-                    />
-                  </div>
-                </motion.div>
-              </>
-            )}
-          </AnimatePresence>
-        </div>
+                          </>
+                        ) : null}
+                      </div>
+                      <div
+                        className={`${
+                          openChild
+                            ? "h-auto transition-transform flex flex-col"
+                            : "h-0 transition-transform"
+                        }`}
+                      >
+                        {list.children && (
+                          <div
+                            className={`
+                            ${open?"":"!hidden"} ${
+                              openChild
+                                ? "h-auto customTransition pl-6 md:text-2xl pr-6"
+                                : "!h-0 customTransition !m-0 !p-0"
+                            } flex flex-col w-[100%]`}
+                          >
+                            {list?.children?.map((child, index) => {
+                              return (
+                                <>
+                                  <div
+                                    key={index}
+                                    onClick={() => {
+                                      navigate(child.href);
+                                      setOpen(false);
+                                    }}
+                                    style={
+                                      path === child.href
+                                        ? {
+                                            backgroundColor: "rgba(0,0,0,0.2)",
+                                          }
+                                        : null
+                                    }
+                                    className={`
+                                    ${
+                                      openChild
+                                        ? "block p-2 customTransition opacity-100 overflow-hidden"
+                                        : "!p-0 customTransition opacity-0 overflow-hidden"
+                                    }`}
+                                  >
+                                    {child.name}
+                                  </div>
+                                </>
+                              );
+                            })}
+                          </div>
+                        )}
+                      </div>
+                    </>
+                  );
+                })}
+              </motion.div>
+              <motion.div
+                key={"sub-menu"}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: "all 0.2s ease-in" }}
+                exit={{ opacity: 0 }}
+                className="absolute !bg-[rgba(0,0,0,0.5)] h-[100%] backdrop-blur-sm w-[100%] z-[9999]"
+                onClick={() => {
+                  setOpen(false);
+                  setOpenChild(false);
+                }}
+              >
+                <div className="text-white absolute top-4 right-5">
+                  <IoMdClose
+                    size={32}
+                    className="text-white md:!text-[38px] focus:!text-red-800"
+                  />
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
+      </div>
 
       {/* -------------------------- NAVBAR FIGMA -----------------------*/}
     </>

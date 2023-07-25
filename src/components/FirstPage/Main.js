@@ -32,6 +32,9 @@ export default function SplitScreen() {
 
   return (
     <>
+      <>
+        <Navbar />
+      </>
       <Grid
         w={'full'}
         h={h}
@@ -43,12 +46,10 @@ export default function SplitScreen() {
         templateRows='repeat(5, 1fr)'
         gap={gap}
       >
-        <React.Fragment>
-          <AnimatePresence onExitComplete={() => null} mode={"wait"}>
-            <Navbar />
-          </AnimatePresence>
-        </React.Fragment>
-        <GridItem rowSpan={5} px={px}>
+        <div className="h-[100px] sm:h-[70px]">
+
+        </div>
+        <GridItem rowSpan={4} px={px}>
           <Stack h={'full'} w={"full"} maxW={"lg"}>
             <div className="h-full">
               <span style={{ fontWeight: "500" }}

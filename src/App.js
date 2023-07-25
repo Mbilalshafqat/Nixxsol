@@ -21,7 +21,7 @@ function App() {
     <>
       <div className="relative">
         <Router>
-            <TopNavbar />
+          <TopNavbar />
           <Routes>
             <Route exact path='/' element={<FirstPage />} />
             <Route exact path='/it_services' element={<SecondPage />} />
