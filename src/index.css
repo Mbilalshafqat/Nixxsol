@@ -74,5 +74,9 @@ body {
   }
 }
 
-
+.customTransition{
+  transition: 0.5s all ease-in-out;
+  -o-transition: 0.5s all ease-in-out;
+  -webkit-transition: 0.5s all ease-in-out;
+}
 

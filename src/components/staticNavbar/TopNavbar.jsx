@@ -4,6 +4,7 @@ import { ChevronDownIcon, CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { RiArrowDropDownFill } from "react-icons/ri";
+import { AnimatePresence, motion } from "framer-motion";
 
 const linksData = [
   { name: "Home", href: "/" },
@@ -59,11 +60,12 @@ export default function TopNavbar() {
   return (
     <>
       {/* -------------------------- NAVBAR FIGMA -----------------------*/}
+
       <div
         className={`${
           !showNavbar
-            ? "fixed !top-0 sm:!top-0 right-0 left-0 h-[80px] sm:h-[60px] w-[100%] !z-[99999] !bg-white transition-all"
-            : "hidden transition-all"
+            ? "fixed !top-0 sm:!top-0 right-0 left-0 h-[80px] sm:h-[60px] w-[100%] !z-[99999] !bg-white customTransition"
+            : "hidden customTransition"
         }`}
       >
         <div
@@ -108,8 +110,8 @@ export default function TopNavbar() {
                                 boxSize={5}
                                 className={`${
                                   hover
-                                    ? "rotate-180 transition-all"
-                                    : "transition-all"
+                                    ? "rotate-180 customTransition"
+                                    : "customTransition"
                                 }`}
                               />
                             </span>
@@ -119,8 +121,8 @@ export default function TopNavbar() {
                           <div
                             className={`${
                               hover
-                                ? "absolute transition-all rounded-[5px] bottom-[-230%] text-black bg-white w-[200%] shadow-md grid cursor-pointer text-sm opacity-100"
-                                : "opacity-0 bottom-[270%] transition-all"
+                                ? "absolute customTransition rounded-[5px] bottom-[-230%] text-black bg-white w-[200%] shadow-md grid cursor-pointer text-sm opacity-100"
+                                : "opacity-0 bottom-[270%] customTransition"
                             }`}
                           >
                             {list.children.map((child, index) => {
@@ -128,7 +130,7 @@ export default function TopNavbar() {
                                 <>
                                   <div
                                     key={index}
-                                    className={`px-2 py-2 text-left font-regular hover:font-medium hover:!px-4 hover:transition-all transition-all`}
+                                    className={`px-2 py-2 text-left font-regular hover:font-medium hover:!px-4 hover customTransition customTransition`}
                                     onClick={() => navigate(child.href)}
                                   >
                                     {child.name}
@@ -170,121 +172,134 @@ export default function TopNavbar() {
           )}
         </div>
       </div>
-      <div
-        className={`${
-          open && width < 880
-            ? "transition-[left] duration-500 bg-transparent flex fixed top-0 left-0 right-0 bottom-0 z-[99999]"
-            : "-left-full -translate-x-full top-0 right-0 bottom-0 duration-500 transition-[left]"
-        }`}
-      >
-        {open && width < 880 && (
-          <>
-            {" "}
-            <div className="h-[100%] w-[75%] bg-white shadow-md flex flex-col pt-2 px-1">
-              {linksData.map((list, index) => {
-                return (
-                  <>
-                    <div
-                      key={index}
-                      onClick={() => {
-                        list.children
-                          ? setOpenChild(!openChild)
-                          : navigate(list.href);
-                      }}
-                      className={`${
-                        path === list.href
-                          ? "!bg-[rgba(0,0,0,0.2)] font-medium"
-                          : ""
-                      } pl-5 py-3 w-[100%] md:text-2xl flex justify-between pr-3`}
-                    >
-                      <span
-                        onClick={() => {
-                          setTimeout(navigate(list.href), 1000);
-                          setOpen(false);
-                          setOpenChild(false);
-                        }}
-                      >
-                        {list.name}
-                      </span>
-                      {list.children ? (
-                        <>
-                          <div>
-                            <RiArrowDropDownFill
-                              color="black"
-                              className={`${
-                                openChild
-                                  ? "rotate-180 transition-all duration-300"
-                                  : "rotate-0 transition-all duration-300"
-                              } sm:text-[24px] md:text-[28px]`}
-                            />
-                          </div>
-                        </>
-                      ) : null}
-                    </div>
-                    <div
-                      className={`${
-                        openChild
-                          ? "h-auto transition-transform duration-300 flex flex-col"
-                          : "h-0 transition-transform duration-300"
-                      }`}
-                    >
-                      {list.children && (
+        <div
+          className={`${
+            open && width < 880
+              ? "bg-transparent flex fixed top-0 left-0 right-0 bottom-0 z-[99999]"
+              : ""
+          }`}
+        >
+          <AnimatePresence onExitComplete={() => null} mode={"wait"}>
+            {open && width < 880 && (
+              <>
+                {" "}
+                <motion.div
+                  key={"menu"}
+                  initial={{ width: 0 }}
+                  animate={{ width: "75%" }}
+                  exit={{ width: 0 }}
+                  className="h-[100%] bg-white shadow-md flex flex-col pt-2 px-1"
+                >
+                  {linksData.map((list, index) => {
+                    return (
+                      <>
+                        <div
+                          key={index}
+                          onClick={() => {
+                            list.children
+                              ? setOpenChild(!openChild)
+                              : navigate(list.href);
+                          }}
+                          className={`${
+                            path === list.href
+                              ? "!bg-[rgba(0,0,0,0.2)] font-medium"
+                              : ""
+                          } pl-5 py-3 w-[100%] md:text-2xl flex justify-between pr-3`}
+                        >
+                          <span
+                            onClick={() => {
+                              setTimeout(navigate(list.href), 1000);
+                              setOpen(false);
+                              setOpenChild(false);
+                            }}
+                          >
+                            {list.name}
+                          </span>
+                          {list.children ? (
+                            <>
+                              <div>
+                                <RiArrowDropDownFill
+                                  color="black"
+                                  className={`${
+                                    openChild
+                                      ? "rotate-180 customTransition"
+                                      : "rotate-0 customTransition"
+                                  } sm:text-[24px] md:text-[28px]`}
+                                />
+                              </div>
+                            </>
+                          ) : null}
+                        </div>
                         <div
                           className={`${
                             openChild
-                              ? "h-auto transition-all duration-500 pl-6 md:text-2xl pr-6"
-                              : "!h-0 transition-all duration-500 !m-0 !p-0"
-                          } flex flex-col  w-[100%]`}
+                              ? "h-auto transition-transform flex flex-col"
+                              : "h-0 transition-transform"
+                          }`}
                         >
-                          {list?.children?.map((child, index) => {
-                            return (
-                              <>
-                                <div
-                                  key={index}
-                                  onClick={() => {
-                                    navigate(child.href);
-                                    setOpen(false);
-                                  }}
-                                  className={`${
-                                    openChild
-                                      ? "block p-2 transition-all duration-200 opacity-100"
-                                      : "!p-0 transition-all duration-100 opacity-0"
-                                  }  ${
-                                    path === child.href
-                                      ? "bg-[rgba(0,0,0,0.2)] font-medium "
-                                      : ""
-                                  }`}
-                                >
-                                  {console.log(child.href)}
-                                  {child.name}
-                                </div>
-                              </>
-                            );
-                          })}
+                          {list.children && (
+                            <div
+                              className={`${
+                                openChild
+                                  ? "h-auto customTransition pl-6 md:text-2xl pr-6"
+                                  : "!h-0 customTransition !m-0 !p-0"
+                              } flex flex-col  w-[100%]`}
+                            >
+                              {list?.children?.map((child, index) => {
+                                return (
+                                  <>
+                                    <div
+                                      key={index}
+                                      onClick={() => {
+                                        navigate(child.href);
+                                        setOpen(false);
+                                      }}
+                                      className={`${
+                                        openChild
+                                          ? "block p-2 customTransition opacity-100"
+                                          : "!p-0 customTransition opacity-0"
+                                      }  ${
+                                        path === child.href
+                                          ? "bg-[rgba(0,0,0,0.2)] font-medium "
+                                          : ""
+                                      }`}
+                                    >
+                                      {console.log(child.href)}
+                                      {child.name}
+                                    </div>
+                                  </>
+                                );
+                              })}
+                            </div>
+                          )}
                         </div>
-                      )}
-                    </div>
-                  </>
-                );
-              })}
-            </div>
-            <div
-              className="w-[25%] !bg-[rgba(0,0,0,0.5)] h-[100%] backdrop-blur-sm relative"
-              onClick={() => {
-                setOpen(false);
-                setOpenChild(false);
-              }}
-            >
-              <div className="text-white absolute top-4 right-5">
-                <IoMdClose
-                  size={25}
-                  className="text-white md:!text-[30px] focus:!text-red-800"
-                />
-              </div>
-            </div>
-          </>
-        )}
-      </div>
+                      </>
+                    );
+                  })}
+                </motion.div>
+                <motion.div
+                  key={"sub-menu"}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="absolute !bg-[rgba(0,0,0,0.5)] h-[100%] backdrop-blur-sm w-[100%] z-[-1]"
+                  onClick={() => {
+                    setOpen(false);
+                    setOpenChild(false);
+                  }}
+                >
+                  <div className="text-white absolute top-4 right-5">
+                    <IoMdClose
+                      size={25}
+                      className="text-white md:!text-[30px] focus:!text-red-800"
+                    />
+                  </div>
+                </motion.div>
+              </>
+            )}
+          </AnimatePresence>
+        </div>
+
       {/* -------------------------- NAVBAR FIGMA -----------------------*/}
     </>
   );
