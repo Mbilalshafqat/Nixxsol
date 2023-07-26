@@ -80,6 +80,9 @@ const HomeTestimonial = () => {
                 >
                   {/* <div className="carousal_box_left"> */}
                   <img src={item.img} alt="" />
+                  {/* <div>
+                    <
+                    </div> */}
                   {/* </div> */}
                 </div>
               );

@@ -10,12 +10,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import TopNavbar from "./components/staticNavbar/TopNavbar";
 import React from "react";
+import About from "./components/About/About";
 
 function App() {
-
   React.useEffect(() => {
-    window.scrollTo({ top: 0, scroll: "instant" })
-  }, [])
+    window.scrollTo({ top: 0, scroll: "instant" });
+  }, []);
 
   return (
     <>
@@ -23,12 +23,12 @@ function App() {
         <Router>
           <TopNavbar />
           <Routes>
-            <Route exact path='/' element={<FirstPage />} />
-            <Route exact path='/it_services' element={<SecondPage />} />
-            <Route exact path='/about' element={<ThirdPage />} />
-            <Route exact path='/portfolio' element={<ForthPage />} />
-            <Route exact path='/ui_ux' element={<FifthPage />} />
-            <Route exact path='/game_devlopment' element={<SixthPage />} />
+            <Route exact path="/" element={<FirstPage />} />
+            <Route exact path="/it_services" element={<SecondPage />} />
+            <Route exact path="/about" element={<About />} />
+            <Route exact path="/portfolio" element={<ForthPage />} />
+            <Route exact path="/ui_ux" element={<FifthPage />} />
+            <Route exact path="/game_devlopment" element={<SixthPage />} />
           </Routes>
           <Footer />
         </Router>
