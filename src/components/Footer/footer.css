@@ -50,6 +50,7 @@
 }
 .footer_conent_right p {
   color: #1d1d1d;
+  font-weight: 500;
   font-size: 15.993px;
   font-style: normal;
   font-weight: 400;
@@ -57,6 +58,7 @@
   letter-spacing: 0.32px;
 }
 .left_footer_box .svg {
+  font-weight: 500;
   font-weight: 400;
   line-height: 23.989px; /* 150% */
   font-size: 23px;
@@ -74,10 +76,11 @@
 }
 .right_conent_footer_li li a {
   color: #1d1d1d;
-  font-size: 19px;
+  font-weight: 500;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 23.989px; /* 109.091% */
+  line-height: 23px; /* 109.091% */
   letter-spacing: 0.44px;
 }
 
@@ -88,7 +91,8 @@
 
 .right_conent_footer_mail p {
   color: #1d1d1d;
-  font-size: 30px;
+  font-weight: 500;
+  font-size: 31.986px;
   font-style: normal;
   font-weight: 400;
   line-height: 23.989px; /* 75% */
@@ -110,6 +114,7 @@
 }
 .right_content_footer_input input {
   color: #5f5f5f;
+  font-weight: 500;
   font-size: 15.993px;
   font-style: normal;
   font-weight: 400;
@@ -140,6 +145,7 @@
 
 .bottom_footer p {
   color: #1d1d1d;
+  font-weight: 500;
   font-size: 16.8px;
   font-style: normal;
   font-weight: 400;
