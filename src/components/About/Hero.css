@@ -196,7 +196,7 @@
     padding: 60px 10px;
   }
   .Hero_section {
-    padding: 30px 1px;
+    padding: 30px 50px;
   }
   .hero_facts h2 {
     font-size: 56px;
@@ -218,6 +218,27 @@
     font-size: 40px;
   }
 }
+@media (max-width: 450px) {
+  .Hero_section {
+    padding: 0px 10px;
+  }
+  .hero_facts {
+    padding: 10px 10px !important;
+  }
+  .hero_facts {
+    gap: 10px;
+    height: 400px;
+  }
+  .right_facts {
+    gap: 0px;
+  }
+  .p-5 {
+    padding: 0px 0px !important;
+  }
+  .Hero_section {
+    height: 300px;
+  }
+}
 
 @media (max-width: 400px) {
   .hero_section_contnt h2 {
@@ -235,6 +256,7 @@
   }
   .hero_facts {
     gap: 10px;
+    height: 350px;
   }
   .right_facts h3 {
     font-size: 18px;
@@ -262,5 +284,8 @@
   }
   .p-5 {
     padding: 0px;
+  }
+  .left_facts h2 {
+    font-size: 52px;
   }
 }

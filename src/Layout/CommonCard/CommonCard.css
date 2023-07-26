@@ -210,6 +210,9 @@
     font-size: 25px;
     width: 100%;
   }
+  .common_card {
+    margin-bottom: 6px;
+  }
 }
 
 /* @media (max-width: 1150px) {
