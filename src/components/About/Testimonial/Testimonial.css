@@ -270,6 +270,9 @@
     height: 200px;
     margin-top: 50px;
   }
+  .testimonial_home {
+    padding: 60px 0px 60px 10px;
+  }
 }
 @media (max-width: 650px) {
   .carousal_track {
@@ -331,6 +334,18 @@
   .testimonial .left p {
     font-size: 18px;
     padding: 10px;
+  }
+  .testimonial_home {
+    padding: 30px 0px 0px 10px;
+  }
+  .carousal_main {
+    height: auto;
+  }
+  .testimonial {
+    padding: 50px 0px 100px 8px;
+  }
+  .testimonial .left p {
+    margin-bottom: 20px;
   }
 }
 

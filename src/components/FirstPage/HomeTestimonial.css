@@ -346,6 +346,9 @@
   .carousal_slide_box_home p {
     font-size: 17px !important;
   }
+  .testimonial_home {
+    padding: 11px 0px 10px 10px;
+  }
 }
 
 @media (max-width: 474px) {

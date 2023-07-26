@@ -75,23 +75,46 @@ export default function Hero() {
         <Portfolio />
       </div>
 
-      <div className={styles.section3}>
-        <div className="row">
-          <div className="col">
-            <img className="img-fluid" src="./First-page/image1.png" alt="" />
-          </div>
-          <div className="col">
-            <img className="img-fluid" src="./First-page/image2.png" alt="" />
-          </div>
-          <div className="col">
-            <img className="img-fluid" src="./First-page/image3.png" alt="" />
-          </div>
-          <div className="col">
-            <img className="img-fluid" src="./First-page/image4.png" alt="" />
-          </div>
-          <div className="col">
-            <img className="img-fluid" src="./First-page/image5.png" alt="" />
-          </div>
+      <div className="bg-black flex justify-center gap-[22px] px-[15px] py-[20px] flex-wrap lg:justify-center md:justify-center sm:justify-center ">
+        <div className="">
+          <img
+            className="img-fluid"
+            src="./First-page/image1.png"
+            alt=""
+            style={{ width: "225px", height: "85px", "flex-shrink": 0 }}
+          />
+        </div>
+        <div className="">
+          <img
+            className="img-fluid"
+            src="./First-page/image2.png"
+            alt=""
+            style={{ width: "225px", height: "85px", "flex-shrink": 0 }}
+          />
+        </div>
+        <div className="">
+          <img
+            className="img-fluid"
+            src="./First-page/image3.png"
+            alt=""
+            style={{ width: "225px", height: "85px", "flex-shrink": 0 }}
+          />
+        </div>
+        <div className="">
+          <img
+            className="img-fluid"
+            src="./First-page/image4.png"
+            alt=""
+            style={{ width: "225px", height: "85px", "flex-shrink": 0 }}
+          />
+        </div>
+        <div className="">
+          <img
+            className="img-fluid"
+            src="./First-page/image5.png"
+            alt=""
+            style={{ width: "225px", height: "85px", "flex-shrink": 0 }}
+          />
         </div>
       </div>
 
