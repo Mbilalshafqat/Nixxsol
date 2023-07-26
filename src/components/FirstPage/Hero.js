@@ -141,7 +141,7 @@ export default function Hero() {
         >
           <h1
             style={{ fontSize: "80px", fontWeight: "700" }}
-            className="card-title card_title dynamic-spacing"
+            className="card-title card_title dynamic-spacing text-center"
           >
             BEING CREATIVE
           </h1>
