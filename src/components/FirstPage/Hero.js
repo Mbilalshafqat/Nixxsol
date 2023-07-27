@@ -11,6 +11,8 @@ import MettingCompoent from "../../Layout/ConatctUs/MettingCompoent";
 import "./Hero.css";
 import AbouCompanyNumber from "../About/AboutCard/AbouCompanyNumber";
 import CommonCard from "../../Layout/CommonCard/CommonCard";
+import ImagescarousalHome from "./ImagescarousalHome";
+import Creative from "./Creative.jsx";
 
 const title = "About Company";
 
@@ -75,48 +77,7 @@ export default function Hero() {
         <Portfolio />
       </div>
 
-      <div className="bg-black flex justify-center gap-[22px] px-[15px] py-[20px] flex-wrap lg:justify-center md:justify-center sm:justify-center ">
-        <div className="">
-          <img
-            className="img-fluid"
-            src="./First-page/image1.png"
-            alt=""
-            style={{ width: "225px", height: "85px", "flex-shrink": 0 }}
-          />
-        </div>
-        <div className="">
-          <img
-            className="img-fluid"
-            src="./First-page/image2.png"
-            alt=""
-            style={{ width: "225px", height: "85px", "flex-shrink": 0 }}
-          />
-        </div>
-        <div className="">
-          <img
-            className="img-fluid"
-            src="./First-page/image3.png"
-            alt=""
-            style={{ width: "225px", height: "85px", "flex-shrink": 0 }}
-          />
-        </div>
-        <div className="">
-          <img
-            className="img-fluid"
-            src="./First-page/image4.png"
-            alt=""
-            style={{ width: "225px", height: "85px", "flex-shrink": 0 }}
-          />
-        </div>
-        <div className="">
-          <img
-            className="img-fluid"
-            src="./First-page/image5.png"
-            alt=""
-            style={{ width: "225px", height: "85px", "flex-shrink": 0 }}
-          />
-        </div>
-      </div>
+      <ImagescarousalHome />
 
       <div>
         <Testimonial />
@@ -130,23 +91,7 @@ export default function Hero() {
         <Partnership />
       </div>
 
-      <div className={styles.section7}>
-        <div
-          className="card no-hover specific-card"
-          style={{
-            backgroundColor: "transparent",
-            color: "white",
-            border: "none",
-          }}
-        >
-          <h1
-            style={{ fontSize: "80px", fontWeight: "700" }}
-            className="card-title card_title dynamic-spacing text-center"
-          >
-            BEING CREATIVE
-          </h1>
-        </div>
-      </div>
+      <Creative />
     </>
   );
 }

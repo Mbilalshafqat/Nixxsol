@@ -7,98 +7,147 @@ import { useEffect } from "react";
 import { IoMdClose } from "react-icons/io";
 import { RiArrowDropDownFill } from "react-icons/ri";
 
-
 const linksData = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   {
-    name: "IT Services", href: "/it_services", children: [
+    name: "IT Services",
+    href: "/it_services",
+    children: [
       { name: "UI/UX Design", href: "/ui_ux" },
-      { name: "Game Devlopment", href: "/game_devlopment" }
-    ]
+      { name: "Game Devlopment", href: "/game_devlopment" },
+    ],
   },
   { name: "Portfolio", href: "/portfolio" },
 ];
 
 export default function Navbar({ top }) {
-  const navigate = useNavigate()
-  const { width } = useWindowsDimension()
-  const path = window.location.pathname
+  const navigate = useNavigate();
+  const { width } = useWindowsDimension();
+  const path = window.location.pathname;
 
   const [hover, setHover] = useState();
   const [open, setOpen] = useState(false);
   const [openChild, setOpenChild] = useState(false);
 
   useEffect(() => {
-    if (["/ui_ux", "/game_devlopment"].includes(path)) { setOpenChild(true); console.log(path, openChild) };
+    if (["/ui_ux", "/game_devlopment"].includes(path)) {
+      setOpenChild(true);
+      console.log(path, openChild);
+    }
   }, [open]);
 
   function handleItClick(list) {
-    navigate((list === path) ? null : list);
+    navigate(list === path ? null : list);
     setHover(false);
   }
 
   return (
     <>
       {/* -------------------------- NAVBAR FIGMA -----------------------*/}
-      <div style={{ fontWeight: "400" }}
-        className={` ${(path === "/" || top) ? "text-[#fdfdfd] bg-transparent absolute top-0 left-0 right-0" : "text-[#161616] shadow-md"}
-          h-[100px] sm:h-[70px] bg-transparent px-24 md:px-16 sm:px-6 xs:px-4 lg:text-sm md:text-xs flex justify-between place-items-center`}>
-        {width > 880 ?
-          <><div className="flex place-items-center">
-            <img onClick={() => navigate(path === "/" ? null : "/")} className="cursor-pointer xl:h-[43px] lg:h-[40px] md:h-[35px]" src={path === "/" ? "./First-Page//nixxol logo white.png" : "./First-Page//nixxol logo black.png"} alt="..." />
-          </div>
+      <div
+        style={{ fontWeight: "400" }}
+        className={` ${
+          path === "/" || top
+            ? "text-[#fdfdfd] bg-transparent absolute top-0 left-0 right-0"
+            : "text-[#161616] shadow-md"
+        }
+          h-[100px] sm:h-[70px] bg-transparent lg:px-[100px] xl:px-[150px] md:px-16 sm:px-6 xs:px-4 lg:text-sm md:text-xs flex justify-between place-items-center`}
+      >
+        {width > 880 ? (
+          <>
+            <div className="flex place-items-center">
+              <img
+                onClick={() => navigate(path === "/" ? null : "/")}
+                className="cursor-pointer xl:h-[43px] lg:h-[40px] md:h-[35px]"
+                src={
+                  path === "/"
+                    ? "./First-Page//nixxol logo white.png"
+                    : "./First-Page//nixxol logo black.png"
+                }
+                alt="..."
+              />
+            </div>
             <div className="flex justify-between gap-16">
-              {
-                linksData.map((list, index) => {
-                  return (
-                    <>
-                      <div onMouseOver={() => list.children ? setHover(true) : null} onMouseOut={() => list.children ? setHover(false) : null} key={index} className="relative flex place-items-center"
+              {linksData.map((list, index) => {
+                return (
+                  <>
+                    <div
+                      onMouseOver={() =>
+                        list.children ? setHover(true) : null
+                      }
+                      onMouseOut={() =>
+                        list.children ? setHover(false) : null
+                      }
+                      key={index}
+                      className="relative flex place-items-center"
+                    >
+                      <div
+                        onClick={() => handleItClick(list.href)}
+                        className={`${
+                          list.href === path ? "font-bold" : "cursor-pointer"
+                        } !h-4 overflow-hidden py-1 flex justify-between place-items-center gap-2`}
                       >
-                        <div onClick={() => handleItClick(list.href)}
-                          className={`${list.href === path ? "font-bold" : "cursor-pointer"} !h-4 overflow-hidden py-1 flex justify-between place-items-center gap-2`}>
-                          <span>{list.name}</span>
-                          {list.children ?
-                            <span className="">
-                              <ChevronDownIcon boxSize={5} className={`${hover ? "rotate-180 customTransition" : "customTransition"}`} />
-                            </span>
-                            : null}
-                        </div>
-                        {list.children && hover ? (
-                          <div
-                            className={`${hover
-                                ? "absolute customTransition z-[999999] rounded-[5px] bottom-[-450%] text-black bg-white w-[200%] shadow-md grid cursor-pointer text-sm opacity-100"
-                                : "opacity-0 bottom-[270%] customTransition"
+                        <span>{list.name}</span>
+                        {list.children ? (
+                          <span className="">
+                            <ChevronDownIcon
+                              boxSize={5}
+                              className={`${
+                                hover
+                                  ? "rotate-180 customTransition"
+                                  : "customTransition"
                               }`}
-                          >
-                            {list.children.map((child, index) => {
-                              return (
-                                <>
-                                  <div
-                                    key={index}
-                                    className={`px-2 py-2 text-left font-regular hover:font-medium hover:!px-4 hover customTransition customTransition`}
-                                    onClick={() => navigate(child.href)}
-                                  >
-                                    {child.name}
-                                  </div>
-                                </>
-                              );
-                            })}
-                          </div>
+                            />
+                          </span>
                         ) : null}
-                      </div >
-                    </>
-                  )
-                })
-              }
+                      </div>
+                      {list.children && hover ? (
+                        <div
+                          className={`${
+                            hover
+                              ? "absolute customTransition z-[999999] rounded-[5px] bottom-[-450%] text-black bg-white w-[200%] shadow-md grid cursor-pointer text-sm opacity-100"
+                              : "opacity-0 bottom-[270%] customTransition"
+                          }`}
+                        >
+                          {list.children.map((child, index) => {
+                            return (
+                              <>
+                                <div
+                                  key={index}
+                                  className={`px-2 py-2 text-left font-regular hover:font-medium hover:!px-4 hover customTransition customTransition`}
+                                  onClick={() => navigate(child.href)}
+                                >
+                                  {child.name}
+                                </div>
+                              </>
+                            );
+                          })}
+                        </div>
+                      ) : null}
+                    </div>
+                  </>
+                );
+              })}
             </div>
             <div className="grid text-right content-center">
               <span>nixxsol@gmail.com</span>
               <span>(09)887532131</span>
-            </div></> :
+            </div>
+          </>
+        ) : (
           <>
             <div className="flex place-items-center">
-              <img onClick={() => navigate(path === "/" ? null : "/")} className="xs:h-[28px] sm:h-[32px] md:h-[40px]" src={path === "/" ? "./First-Page//nixxol logo white.png" : "./First-Page//nixxol logo black.png"} alt="..." />
+              <img
+                onClick={() => navigate(path === "/" ? null : "/")}
+                className="xs:h-[28px] sm:h-[32px] md:h-[40px]"
+                src={
+                  path === "/"
+                    ? "./First-Page//nixxol logo white.png"
+                    : "./First-Page//nixxol logo black.png"
+                }
+                alt="..."
+              />
             </div>
             <div
               onClick={(e) => {
@@ -109,14 +158,15 @@ export default function Navbar({ top }) {
               <HamburgerIcon boxSize={6} />
             </div>
           </>
-        }
+        )}
       </div>
 
       <div
-        className={`${open && width < 880
-          ? "bg-transparent flex fixed top-0 left-0 right-0 bottom-0 z-[99999]"
-          : "!h-0 -top-full !w-0 !p-0"
-          }`}
+        className={`${
+          open && width < 880
+            ? "bg-transparent flex fixed top-0 left-0 right-0 bottom-0 z-[99999]"
+            : "!h-0 -top-full !w-0 !p-0"
+        }`}
       >
         <AnimatePresence>
           {open && width < 880 && (
@@ -139,10 +189,13 @@ export default function Navbar({ top }) {
                             ? setOpenChild(!openChild)
                             : navigate(list.href);
                         }}
-                        className={`${open ? "opacity-100 customTransition" : "hidden"} ${path === list.href
-                          ? "!bg-[rgba(0,0,0,0.2)] font-medium roundeded-[4px]"
-                          : ""
-                          } pl-5 py-3 w-[100%] md:text-2xl flex justify-between pr-3`}
+                        className={`${
+                          open ? "opacity-100 customTransition" : "hidden"
+                        } ${
+                          path === list.href
+                            ? "!bg-[rgba(0,0,0,0.2)] font-medium roundeded-[4px]"
+                            : ""
+                        } pl-5 py-3 w-[100%] md:text-2xl flex justify-between pr-3`}
                       >
                         <span
                           onClick={() => {
@@ -158,27 +211,35 @@ export default function Navbar({ top }) {
                             <div>
                               <RiArrowDropDownFill
                                 color="black"
-                                className={`${openChild
-                                  ? "rotate-180 customTransition"
-                                  : "rotate-0 customTransition"
-                                  } sm:text-[24px] md:text-[28px]`}
+                                className={`${
+                                  openChild
+                                    ? "rotate-180 customTransition"
+                                    : "rotate-0 customTransition"
+                                } sm:text-[24px] md:text-[28px]`}
                               />
                             </div>
                           </>
                         ) : null}
                       </div>
                       <div
-                        className={`${openChild
-                          ? "h-auto transition-transform flex flex-col"
-                          : "h-0 transition-transform"
-                          }`}
+                        className={`${
+                          openChild
+                            ? "h-auto transition-transform flex flex-col"
+                            : "h-0 transition-transform"
+                        }`}
                       >
                         {list.children && (
-                          <div style={open ? null : { overflow: "hidden", display: "none" }}
-                            className={`${openChild
-                              ? "sm:h-20 xs:h-20 md:h-32 customTransition pl-6 md:text-2xl pr-6"
-                              : "!h-0 customTransition !m-0 !p-0"
-                              } flex flex-col w-[100%]`}
+                          <div
+                            style={
+                              open
+                                ? null
+                                : { overflow: "hidden", display: "none" }
+                            }
+                            className={`${
+                              openChild
+                                ? "sm:h-20 xs:h-20 md:h-32 customTransition pl-6 md:text-2xl pr-6"
+                                : "!h-0 customTransition !m-0 !p-0"
+                            } flex flex-col w-[100%]`}
                           >
                             {list?.children?.map((child, index) => {
                               return (
@@ -189,12 +250,17 @@ export default function Navbar({ top }) {
                                       navigate(child.href);
                                       setOpen(false);
                                     }}
-                                    style={path === child.href ? { backgroundColor: "rgba(0,0,0,0.2)" } : null}
+                                    style={
+                                      path === child.href
+                                        ? { backgroundColor: "rgba(0,0,0,0.2)" }
+                                        : null
+                                    }
                                     className={`
-                                    ${openChild
+                                    ${
+                                      openChild
                                         ? "block pl-5 customTransition opacity-100"
                                         : "!p-0 customTransition opacity-0"
-                                      } flex-1 flex place-items-center !overflow-hidden rounded-[4px] w-[100%]`}
+                                    } flex-1 flex place-items-center !overflow-hidden rounded-[4px] w-[100%]`}
                                   >
                                     {child.name}
                                   </div>
@@ -234,4 +300,3 @@ export default function Navbar({ top }) {
     </>
   );
 }
-

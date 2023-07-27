@@ -83,16 +83,24 @@ const Testimonial = () => {
                     item.id === currentIndex
                       ? "carousal_slide_box"
                       : item.id === currentIndex + 1
-                      ? "non_active carousal_slide_box"
-                      : "carousal_slide_box opacity-0"
+                      ? "non_active leading-snug carousal_slide_box"
+                      : "carousal_slide_box greatet_carousal_box"
                   }`}
                   style={{
-                    transform: `translateX(-${currentIndex * 103.5}%)`,
-                    transition: "all 0.6s ease",
+                    transform: `translateX(-${currentIndex * 103.7}%)`,
+                    transition: "all .6s ease",
                   }}
                 >
                   {/* <div className="carousal_box_left"> */}
-                  <img src={item.img} alt="" />
+                  <img
+                    src={item.img}
+                    alt=""
+                    style={{
+                      transition: "all .6s ease",
+                      display: "flex",
+                      alignItems: "center",
+                    }}
+                  />
                   {/* </div> */}
                   <div className="carousal_box_right">
                     <h2>{item.name}</h2>

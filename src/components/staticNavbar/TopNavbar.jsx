@@ -71,9 +71,9 @@ export default function TopNavbar() {
         <div
           style={{ fontWeight: "400" }}
           className={`text-[#161616] shadow-md
-            h-[100%] bg-transparent px-24 md:px-16 sm:px-6  xs:px-4 lg:text-sm md:text-xs flex justify-between place-items-center`}
+            h-[100%] bg-transparent  lg:px-[100px] xl:px-[150px] md:px-16 sm:px-6  xs:px-4 lg:text-sm md:text-xs flex justify-between place-items-center`}
         >
-          {width > 880 ? (
+          {width > 1023 ? (
             <>
               <div className="flex place-items-center">
                 <img
@@ -83,7 +83,7 @@ export default function TopNavbar() {
                   alt="..."
                 />
               </div>
-              <div className="flex justify-between gap-16">
+              <div className="flex justify-between gap-16 lg:gap-11 xl:gap-16">
                 {linksData.map((list, index) => {
                   return (
                     <>
@@ -174,13 +174,13 @@ export default function TopNavbar() {
       </div>
       <div
         className={`${
-          open && width < 880
+          open && width < 1023
             ? "bg-transparent flex fixed top-0 left-0 right-0 bottom-0 z-[99999]"
             : ""
         }`}
       >
         <AnimatePresence>
-          {open && width < 880 && (
+          {open && width < 1023 && (
             <>
               {" "}
               <motion.div
@@ -242,7 +242,7 @@ export default function TopNavbar() {
                         {list.children && (
                           <div
                             className={`
-                            ${open?"":"!hidden"} ${
+                            ${open ? "" : "!hidden"} ${
                               openChild
                                 ? "h-auto customTransition pl-6 md:text-2xl pr-6"
                                 : "!h-0 customTransition !m-0 !p-0"

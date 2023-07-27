@@ -21,6 +21,7 @@ import HeroAbout from "../About/Hero";
 import AbouCompanyNumber from "../About/AboutCard/AbouCompanyNumber";
 import MettingCompoent from "../../Layout/ConatctUs/MettingCompoent";
 import CommonCard from "../../Layout/CommonCard/CommonCard";
+import Creative from "../FirstPage/Creative";
 
 const heroTitle = "IT Services";
 const herodiscription =
@@ -128,23 +129,7 @@ export default function Hero() {
 
       <Partnership />
 
-      <div className={styles.section3}>
-        <div
-          className="card no-hover"
-          style={{
-            backgroundColor: "transparent",
-            color: "white",
-            border: "none",
-          }}
-        >
-          <h1
-            style={{ fontSize: "80px", fontWeight: "700" }}
-            className="card-title dynamic-spacing"
-          >
-            BEING CREATIVE
-          </h1>
-        </div>
-      </div>
+      <Creative />
     </>
   );
 }

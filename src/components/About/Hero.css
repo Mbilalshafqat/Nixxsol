@@ -1,7 +1,7 @@
 .Hero_section {
   text-align: left;
   height: 450px;
-  padding: 50px 90px;
+  padding: 50px 150px;
   display: flex;
   align-items: center;
 }
@@ -30,7 +30,7 @@
 
 /* -------------------------------------------------------- hero_facts */
 .hero_facts {
-  padding: 100px 90px;
+  padding: 100px 150px;
   text-align: left;
   justify-self: center;
   align-self: center;
@@ -56,7 +56,6 @@
 .right_facts {
   display: grid;
   grid-template-columns: 1fr;
-  padding-right: 100px;
   gap: 33px;
 }
 
@@ -125,6 +124,11 @@
     padding-right: 0px;
   }
 }
+@media (max-width: 1280px) {
+  .hero_facts {
+    padding: 100px 100px;
+  }
+}
 @media (max-width: 1210px) {
   .hero_facts {
     grid-template-columns: 0.6fr 1fr;
@@ -137,10 +141,15 @@
 
 @media (max-width: 1050px) {
   .hero_facts {
-    padding: 100px 50px !important;
+    padding: 100px 150px !important;
   }
   .Hero_section {
     padding: 50px 50px;
+  }
+}
+@media (max-width: 991px) {
+  .hero_facts {
+    padding: 100px 64px !important;
   }
 }
 @media (max-width: 960px) {
@@ -171,6 +180,11 @@
   }
 }
 
+@media (max-width: 680px) {
+  .hero_facts {
+    padding: 100px 24px !important;
+  }
+}
 @media (max-width: 768px) {
   .hero_facts {
     grid-template-columns: 1fr;
@@ -191,13 +205,20 @@
   }
 }
 
+@media (max-width: 680px) {
+  .hero_facts {
+    padding: 10px 24px !important;
+  }
+  .Hero_section {
+    padding: 10px 24px !important;
+  }
+}
+
 @media (max-width: 600px) {
   .hero_facts {
     padding: 60px 10px;
   }
-  .Hero_section {
-    padding: 30px 50px;
-  }
+
   .hero_facts h2 {
     font-size: 56px;
     /* width: 250px; */
@@ -223,7 +244,7 @@
     padding: 0px 10px;
   }
   .hero_facts {
-    padding: 10px 10px !important;
+    padding: 10px 24px !important;
   }
   .hero_facts {
     gap: 10px;
@@ -271,7 +292,7 @@
     font-size: 14px;
   }
   .hero_facts {
-    padding: 20px 10px;
+    padding: 20px 24px;
   }
   .Hero_section {
     padding: 30px 10px;
@@ -280,7 +301,7 @@
     gap: 10px !important;
   }
   .hero_facts {
-    padding: 10px 10px !important;
+    padding: 10px 24px !important;
   }
   .p-5 {
     padding: 0px;

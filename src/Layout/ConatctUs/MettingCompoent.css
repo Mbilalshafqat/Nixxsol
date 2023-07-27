@@ -2,7 +2,7 @@
   text-align: left;
   display: grid;
   grid-template-columns: 1fr 0.7fr;
-  padding: 50px 91px;
+  padding: 50px 150px;
   gap: 50px;
   background-image: linear-gradient(
     to right,
@@ -45,7 +45,7 @@
 .left_metting {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
 }
 
@@ -192,9 +192,14 @@
   .left_metting h2 {
     font-size: 80px;
     width: 100%;
+    z-index: 88;
+    color: white;
   }
   .left_metting p {
     width: 100%;
+  }
+  .metting_component {
+    padding: 50px 24px !important;
   }
 }
 

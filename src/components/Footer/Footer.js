@@ -9,6 +9,7 @@ import {
 import { HiLocationMarker } from "react-icons/hi";
 import { FaFacebook } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+// import logo from "../../";
 
 const LeftfooterContent = [
   {
@@ -34,7 +35,8 @@ const Footer = () => {
     <div className="footer">
       {/* ---------------------------------- footer logo section one  */}
       <div className="footer_logo">
-        <img src="./logofooter.PNG" alt="logo" />
+        {/* <img src="./logofooter.PNG" alt="logo" /> */}
+        <img src="logonixxsol.svg" alt="logo" />
       </div>
 
       {/* --------------------- footer content section 2  */}

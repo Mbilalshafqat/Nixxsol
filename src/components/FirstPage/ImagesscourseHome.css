@@ -1,0 +1,23 @@
+.mySwiper {
+  /* border: 2px solid red; */
+}
+.mySwiper .SwiperSlide {
+  /* border: 2px solid white; */
+}
+
+@media (max-width: 640px) {
+  .SwiperSlide {
+    width: 250 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 500px) {
+  .SwiperSlide {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
