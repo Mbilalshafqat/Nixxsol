@@ -548,7 +548,7 @@
     height: auto;
   }
   .non_active {
-    padding: 5px;
+    padding: 10px;
   }
   .button {
     justify-content: flex-end;
@@ -632,18 +632,18 @@
 }
 @media (max-width: 380px) {
   .carousal_track {
-    height: 350px;
+    height: 370px;
   }
   .carousal_slide_box {
-    width: 280px !important;
+    width: 290px !important;
     margin-left: 0px;
-    height: 350px;
+    height: 370px;
     margin: 12px;
     margin: 0px 10px;
     margin-left: 5px;
   }
   .non_active {
-    height: 200px;
+    height: 210px !important;
     margin-top: 150px;
   }
 }
@@ -652,7 +652,7 @@
     height: 350px;
   }
   .carousal_slide_box {
-    width: 260px !important;
+    width: 280px !important;
     margin-left: 0px;
     height: 350px;
     margin: 12px;
@@ -686,7 +686,7 @@
     height: 400px;
   }
   .carousal_slide_box {
-    width: 240px !important;
+    width: 250px !important;
     margin-left: 0px;
     height: 400px;
     margin: 12px;

@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Projectcard = ({ data }) => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   return (
     <div className="project_card_main_ux_game">
       <div className="project_card_ux_game">
@@ -17,7 +22,12 @@ const Projectcard = ({ data }) => {
                   <h2>{item.title}</h2>
                   <p>{item.dis}</p>
                 </div>
-                <div className="project_card_right_ux_game">
+                <div
+                  className="project_card_right_ux_game"
+                  data-aos={item.slide}
+                  data-aos-once="true"
+                  data-aos-delay={item.delay}
+                >
                   <img src={item.img} alt="" />
                 </div>
               </div>

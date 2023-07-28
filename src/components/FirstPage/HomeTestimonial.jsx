@@ -75,14 +75,14 @@ const HomeTestimonial = () => {
                       : "carousal_slide_box_home opacity-0"
                   }`}
                   style={{
-                    transform: `translateX(-${currentIndex * 103.5}%)`,
+                    transform: `translateX(-${currentIndex * 101.5}%)`,
                     transition: "all 0.6s ease",
                   }}
                 >
                   {/* <div className="carousal_box_left"> */}
                   <>
                     <img src={item.img} alt="" />
-                    {/* <div
+                    <div
                       className={`p-3 nonactiveheadingbtn absolute left-0 bottom-0 bg-[#E92129] cursor-pointer text-white clippath_btn
                     `}
                     >
@@ -91,7 +91,7 @@ const HomeTestimonial = () => {
                         <p>see all games</p>
                         <BsArrowRight />
                       </div>
-                    </div> */}
+                    </div>
                   </>
 
                   {/* <div>
