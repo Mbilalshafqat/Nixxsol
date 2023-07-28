@@ -22,8 +22,11 @@ const WorkProcess = () => {
 
       {/* ------------------------------  */}
       <div className="worg_process">
-        <img src="./aboutsvg.PNG" alt="" className="computer_view" />
-        <img src="./abotsvg2.PNG" alt="" className="resposive" />
+        <img src="./dotted.svg" alt="" className="computer_view" />
+        <div>
+          <img src="./dotted2.svg" alt="" className="resposive" />
+          <img src="./dotted3.svg" alt="" className="resposive" />
+        </div>
       </div>
     </>
   );

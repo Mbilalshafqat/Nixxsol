@@ -1,48 +1,81 @@
-import Card from './Card'
-import styles from './Home.module.css'
-import Services from './Services'
-import BookMeeting from '../FirstPage/BookMeeting';
-import Testimonials from '../FirstPage/Testimonials';
+import Card from "./Card";
+import styles from "./Home.module.css";
+import Services from "./Services";
+import BookMeeting from "../FirstPage/BookMeeting";
+import Testimonials from "../FirstPage/Testimonials";
+import HeroComponent from "../About/Hero";
+import UXcrad from "../../Layout/UXPORTcards/UXcrad";
+import Maincard from "../../Layout/UXPORTcards/Maincard";
+import Projectcard from "../../Layout/ProjectCard/Projectcard";
+import MettingCompoent from "../../Layout/ConatctUs/MettingCompoent";
+import Testimonial from "../About/Testimonial/Testimonial";
+import Creative from "../FirstPage/Creative";
 
-export default function Hero(){
-    return(
-<>
-<div className="card my-5 p-5 no-hover" style={{width: "18rem;", border:"none", textAlign:"left", fontFamily:'Proxima Nova'}}>
-  <div className="card-body">
-    <h1 className="card-title specific-card">Game<br/>Development</h1>
-    <p className="card-text" >Home/Portfolio</p>
-  </div>
-</div>
+const cardsdata = [
+  {
+    id: 1,
+    image: "./First-page//game.png",
+    projectName: "Game Development",
+    totalproject: "12 projects done",
+  },
+  {
+    id: 2,
+    image: "./First-page//game.png",
+    projectName: "Game Development",
+    totalproject: "12 projects done",
+  },
+  {
+    id: 3,
+    image: "./First-page//game.png",
+    projectName: "Game Development",
+    totalproject: "12 projects done",
+  },
+  {
+    id: 4,
+    image: "./First-page//game.png",
+    projectName: "Game Development",
+    totalproject: "12 projects done",
+  },
+];
 
-<div className={styles.section1}>
-    <Services/>
-</div>
+const gameData = [
+  {
+    id: 1,
+    title: "Project Name",
+    dis: "Mattis ornare tincidunt tempus mattis mi vel auctor ipsum venenatis. Tellus nunc scelerisque dictum sagittis euismod urna egestas quam. In ornare nisl leo odio magna.",
+    img: "./game1.svg",
+  },
+  {
+    id: 2,
+    title: "Project Name",
+    dis: "Mattis ornare tincidunt tempus mattis mi vel auctor ipsum venenatis. Tellus nunc scelerisque dictum sagittis euismod urna egestas quam. In ornare nisl leo odio magna.",
+    img: "./game2.svg",
+  },
+  {
+    id: 3,
+    title: "Project Name",
+    dis: "Mattis ornare tincidunt tempus mattis mi vel auctor ipsum venenatis. Tellus nunc scelerisque dictum sagittis euismod urna egestas quam. In ornare nisl leo odio magna.",
+    img: "./game3.svg",
+  },
+];
 
-<div className={styles.section2}>
-<Card/>
-</div>
+export default function Hero() {
+  return (
+    <>
+      <HeroComponent
+        width={true}
+        title={"Game Development"}
+        discriptrion={"Home/Portfolio"}
+      />
 
-<div className={styles.section3}>
-<BookMeeting/>
-</div>
+      <Maincard carddata={cardsdata} />
 
-<div className={styles.section4}>
-  <div className='row container'>
-    <div className='col-12 col-md container' style={{textAlign:"left"}}>
-      <h1 className='responsive-font-example' style={{fontWeight:"700"}}>Testimonials</h1>
-      <p>Lorem ipsum dolor sit amet consectetur. Nunc viverra faucibus praesent elementum commodo.</p>
-    </div>
-    <div className='col-12 col-md'>
-      <Testimonials/>
-    </div>
-  </div>
-</div>
+      <Projectcard data={gameData} />
 
-<div className={styles.section5}>
-<div className="card no-hover" style={{backgroundColor:"transparent", color:"white", border:"none"}}>
-  <h1 style={{fontSize:"80px", fontWeight:"700"}} className="card-title dynamic-spacing">BEING CREATIVE</h1>
-</div>
-</div>
-</>
-    )
+      <MettingCompoent />
+
+      <Testimonial />
+      <Creative />
+    </>
+  );
 }

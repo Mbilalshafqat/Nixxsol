@@ -3,7 +3,7 @@ import "./Hero.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const Hero = ({ title, discriptrion }) => {
+const Hero = ({ title, discriptrion, width }) => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);

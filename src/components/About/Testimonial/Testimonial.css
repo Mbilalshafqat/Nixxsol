@@ -547,6 +547,9 @@
     flex-direction: column;
     height: auto;
   }
+  .non_active {
+    padding: 5px;
+  }
   .button {
     justify-content: flex-end;
     padding-right: 20px;

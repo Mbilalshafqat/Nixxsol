@@ -15,6 +15,53 @@
   color: white;
   margin-top: 20px;
 }
+.clippath_btn {
+  width: 180.888px;
+  height: 62.376px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  -webkit-clip-path: polygon(0 1%, 76% 5%, 100% 100%, 0% 100%);
+  clip-path: polygon(0 1%, 76% 5%, 100% 100%, 0% 100%);
+  padding: 13px;
+}
+.non_active_home .clippath_btn {
+  width: 120.888px;
+  height: 50.376px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  -webkit-clip-path: polygon(0 1%, 76% 5%, 100% 100%, 0% 100%);
+  clip-path: polygon(0 1%, 76% 5%, 100% 100%, 0% 100%);
+  padding: 13px;
+  transition: all 0.6s ease;
+  font-size: 12px !important;
+}
+.clippath_btn h2 {
+  color: #fff;
+  font-family: Inter;
+  font-size: 23.16px !important;
+  /* color: red; */
+  font-style: normal;
+  font-weight: 700;
+  line-height: 106.3%; /* 17.178px */
+}
+.non_active_home .clippath_btn h2 {
+  font-size: 15px !important;
+}
+.non_active_home .clippath_btn p {
+  font-size: 10px !important;
+}
+.non_active_home h2 {
+  font-size: 15px;
+}
+.non_active_home p {
+  font-size: 10px;
+}
 
 .testimonial_home .left h2 {
   color: #242424;
@@ -366,6 +413,9 @@
   .testimonial_home {
     padding: 60px 0px 60px 24px;
   }
+  .button {
+    padding: 10px 24px !important;
+  }
 }
 @media (max-width: 650px) {
   .carousal_track_home {
@@ -405,10 +455,10 @@
     height: 300px;
   }
   .testimonial_home {
-    padding: 10px 24px !important;
+    padding: 10px 0px 10px 24px !important;
   }
   .carousal_slide_box_home {
-    width: 410px !important;
+    width: 350px !important;
     height: 300px;
     margin: 12px;
     margin: 0px 10px;
@@ -416,7 +466,7 @@
   }
   .non_active_home {
     height: 200px;
-    margin-top: 90px;
+    margin-top: 100px;
   }
   .carousal_slide_box_home p {
     font-size: 17px !important;
@@ -444,20 +494,23 @@
   }
   .non_active_home {
     height: 200px;
-    margin-top: 50px;
+    margin-top: 100px;
   }
 }
 @media (max-width: 400px) {
   .carousal_track_home {
-    height: 300px;
+    height: 280px;
   }
   .carousal_slide_box_home {
-    width: 340px !important;
+    width: 280px !important;
     height: 300px;
   }
   .non_active_home {
     height: 200px;
-    margin-top: 50px;
+    margin-top: 100px;
+  }
+  .button {
+    padding: 10px;
   }
 }
 
@@ -483,7 +536,7 @@
   }
   .non_active_home {
     height: 200px;
-    margin-top: 50px;
+    margin-top: 80px;
   }
   .button {
   }
@@ -499,7 +552,7 @@
   }
   .non_active_home {
     height: 200px;
-    margin-top: 50px;
+    margin-top: 80px;
   }
 }
 @media (max-width: 360px) {
@@ -513,6 +566,6 @@
   }
   .non_active_home {
     height: 200px;
-    margin-top: 50px;
+    margin-top: 80px;
   }
 }

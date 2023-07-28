@@ -17,7 +17,7 @@ const Creative = () => {
         }}
       >
         {width < 500 ? (
-          <div className="flex text-center !tracking-[20px] justify-center place-items-center text-[30px] !font-bold text-white py-4">
+          <div className="flex text-center !tracking-[20px] justify-center place-items-center text-[36px] !font-extrabold text-white py-2">
             BEING <br /> CREATIVE
           </div>
         ) : (

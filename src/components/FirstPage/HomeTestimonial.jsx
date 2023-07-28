@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./HomeTestimonial.css";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { BsArrowRight } from "react-icons/bs";
 
 const slides = [
   {
@@ -74,12 +75,25 @@ const HomeTestimonial = () => {
                       : "carousal_slide_box_home opacity-0"
                   }`}
                   style={{
-                    transform: `translateX(-${currentIndex * 103.5}%)`,
+                    transform: `translateX(-${currentIndex * 102.5}%)`,
                     transition: "all 0.6s ease",
                   }}
                 >
                   {/* <div className="carousal_box_left"> */}
-                  <img src={item.img} alt="" />
+                  <>
+                    <img src={item.img} alt="" />
+                    <div
+                      className={`p-3 nonactiveheadingbtn absolute left-0 bottom-0 bg-[#E92129] cursor-pointer text-white clippath_btn
+                    `}
+                    >
+                      <h2>Games</h2>
+                      <div className="flex place-items-center gap-1">
+                        <p>see all games</p>
+                        <BsArrowRight />
+                      </div>
+                    </div>
+                  </>
+
                   {/* <div>
                     <
                     </div> */}

@@ -1,0 +1,114 @@
+.project_card_main_ux_game {
+  text-align: left;
+  padding: 50px 150px;
+}
+.project_card_ux_game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 63px;
+}
+.project_card_box_ux_game {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+.give_order .project_card_right_ux_game {
+  order: 1;
+}
+.give_order .project_card_left_ux_game {
+  order: 2;
+}
+.project_card_left_ux_game h2 {
+  color: #000;
+  font-family: Proxima Nova;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 103.8%; /* 83.04px */
+  align-self: stretch;
+  padding-bottom: 5px;
+}
+.project_card_left_ux_game p {
+  color: #171717;
+  font-family: Proxima Nova;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 139.8%; /* 27.96px */
+  align-self: stretch;
+}
+.project_card_right_ux_game img {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  border-radius: 10px;
+}
+
+/* =========================  */
+@media (max-width: 1280px) {
+  .project_card_main_ux_game {
+    padding: 50px 100px;
+  }
+  .project_card_left_ux_game h2 {
+    width: 300px;
+  }
+}
+@media (max-width: 992px) {
+  .project_card_main_ux_game {
+    padding: 50px 64px;
+  }
+  .project_card_box_ux_game {
+    /* grid-template-columns: 1fr; */
+  }
+}
+
+@media (max-width: 800px) {
+  .project_card_left_ux_game h2 {
+    font-size: 50px;
+    width: 250px;
+  }
+  .project_card_left_ux_game p {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 680px) {
+  .project_card_main_ux_game {
+    padding: 50px 24px;
+  }
+  .project_card_box_ux_game {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .project_card_left_ux_game h2 {
+    font-size: 70px;
+    width: 100%;
+  }
+  .project_card_left_ux_game p {
+    font-size: 20px;
+  }
+  .give_order .project_card_right_ux_game {
+    order: 2;
+  }
+  .give_order .project_card_left_ux_game {
+    order: 1;
+  }
+}
+
+@media (max-width: 500px) {
+  .project_card_right_ux_game img {
+    width: 100%;
+    object-fit: cover;
+    height: 396px;
+  }
+  .project_card_left_ux_game h2 {
+    font-size: 52px;
+  }
+  .project_card_left_ux_game p {
+    font-size: 18px;
+  }
+}

@@ -15,7 +15,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: 103.8%; /* 83.04px */
-  width: 376px;
+  width: 450px;
   margin-bottom: 14px;
 }
 .hero_section_contnt p {
@@ -125,7 +125,7 @@
   }
 }
 @media (max-width: 1280px) {
-  .hero_facts {
+  .Hero_section {
     padding: 100px 100px;
   }
 }
@@ -143,12 +143,9 @@
   .hero_facts {
     padding: 100px 150px !important;
   }
-  .Hero_section {
-    padding: 50px 50px;
-  }
 }
 @media (max-width: 991px) {
-  .hero_facts {
+  .Hero_section {
     padding: 100px 64px !important;
   }
 }
