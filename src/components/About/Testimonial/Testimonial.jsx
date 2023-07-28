@@ -87,7 +87,7 @@ const Testimonial = () => {
                       : "carousal_slide_box greatet_carousal_box"
                   }`}
                   style={{
-                    transform: `translateX(-${currentIndex * 103.7}%)`,
+                    transform: `translateX(-${currentIndex * 104}%)`,
                     transition: "all .6s ease",
                   }}
                 >
@@ -114,9 +114,11 @@ const Testimonial = () => {
           <button onClick={prevSlide}>
             <IoIosArrowBack />
           </button>
-          <button onClick={nextSlide}>
-            <IoIosArrowForward />
-          </button>
+          {currentIndex !== slides.length - 1 && (
+            <button onClick={nextSlide}>
+              <IoIosArrowForward />
+            </button>
+          )}
         </div>
       </div>
     </div>

@@ -2,13 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: Proxmiz Nova;
+  src: url("./fonts/Proxima\ Nova\ Bold.otf");
+}
+
 * {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  font-family: "Figtree", sans-serif;
+  font-family: Proxmiz Nova !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: relative;
@@ -39,7 +44,7 @@ body {
   .card-title.specific-card {
     font-size: 40px;
   }
-  .body{
+  .body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -79,9 +84,8 @@ body {
   }
 }
 
-.customTransition{
+.customTransition {
   transition: 0.3s all ease-in-out;
   -o-transition: 0.3s all ease-in-out;
   -webkit-transition: 0.3s all ease-in-out;
 }
-

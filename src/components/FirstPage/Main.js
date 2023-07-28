@@ -15,7 +15,7 @@ export default function SplitScreen() {
     sm: "400px",
     md: "520px",
     lg: "550px",
-    xl: "600px",
+    xl: "100vh",
   });
 
   const px = useBreakpointValue({
@@ -51,9 +51,9 @@ export default function SplitScreen() {
           <Stack h={"full"} w={"full"} maxW={"lg"}>
             <div className="h-full">
               <span
-                style={{ fontWeight: "500" }}
+                // style={{ fontWeight: "500" }}
                 className="leading-[1.15] sm:leading-[1.25] xs:leading-[1.3]
-                 xl:text-[70px] lg:text-[60px] md:text-[60px] sm:text-[40px] xs:text-[33px]
+                 xl:text-[75px] lg:text-[60px] md:text-[60px] sm:text-[40px] xs:text-[33px]
                 text-left text-white flex place-items-center"
               >
                 Bridging the <br /> gap between

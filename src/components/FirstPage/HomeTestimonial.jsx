@@ -106,9 +106,11 @@ const HomeTestimonial = () => {
           <button onClick={prevSlide}>
             <IoIosArrowBack />
           </button>
-          <button onClick={nextSlide}>
-            <IoIosArrowForward />
-          </button>
+          {currentIndex !== slides.length - 1 && (
+            <button onClick={nextSlide}>
+              <IoIosArrowForward />
+            </button>
+          )}
         </div>
       </div>
     </div>
