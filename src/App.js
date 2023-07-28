@@ -11,6 +11,7 @@ import Footer from "./components/Footer/Footer";
 import TopNavbar from "./components/staticNavbar/TopNavbar";
 import React from "react";
 import About from "./components/About/About";
+import { ScrollToTop } from "react-router-scroll-to-top";
 
 function App() {
   React.useEffect(() => {
@@ -21,6 +22,7 @@ function App() {
     <>
       <div className="relative">
         <Router>
+          <ScrollToTop />
           <TopNavbar />
           <Routes>
             <Route exact path="/" element={<FirstPage />} />
