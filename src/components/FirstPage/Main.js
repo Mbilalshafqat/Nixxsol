@@ -54,7 +54,7 @@ export default function SplitScreen() {
                 // style={{ fontWeight: "500" }}
                 className="leading-[1.15] sm:leading-[1.25] xs:leading-[1.3]
                  xl:text-[75px] lg:text-[60px] md:text-[60px] sm:text-[40px] xs:text-[33px]
-                text-left text-white flex place-items-center"
+                text-left text-white flex place-items-center font-bold"
               >
                 Bridging the <br /> gap between
                 <br /> ideas and

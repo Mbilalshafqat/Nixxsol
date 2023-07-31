@@ -207,7 +207,7 @@
     padding: 10px 24px !important;
   }
   .Hero_section {
-    padding: 10px 24px !important;
+    padding: 50px 24px !important;
   }
 }
 
@@ -241,6 +241,19 @@
   }
   .Hero_section p {
     width: 100% !important;
+  }
+  .facts_numbring {
+    margin-top: 20px;
+    margin-bottom: 20px !important;
+  }
+  .facts_numbring h2 {
+    font-size: 40px;
+  }
+  .left_facts h2 {
+    margin-bottom: 7px;
+  }
+  .right_facts h3 {
+    margin: 8px 0px;
   }
 }
 @media (max-width: 450px) {

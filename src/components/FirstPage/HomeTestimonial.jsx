@@ -103,11 +103,21 @@ const HomeTestimonial = () => {
             })}
         </div>
         <div className="button">
-          <button onClick={prevSlide}>
-            <IoIosArrowBack />
-          </button>
-          {currentIndex !== slides.length - 1 && (
+          {currentIndex === 0 ? (
+            <button className="opacity-[.5]">
+              <IoIosArrowBack />
+            </button>
+          ) : (
+            <button onClick={prevSlide}>
+              <IoIosArrowBack />
+            </button>
+          )}
+          {currentIndex !== slides.length - 1 ? (
             <button onClick={nextSlide}>
+              <IoIosArrowForward />
+            </button>
+          ) : (
+            <button className="opacity-[.5]">
               <IoIosArrowForward />
             </button>
           )}
