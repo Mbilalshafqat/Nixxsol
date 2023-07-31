@@ -29,7 +29,7 @@ const AboutCard = () => {
     AOS.init({ duration: 1000, once: true });
   }, []);
   return (
-    <div className="aboutCard">
+    <div className="aboutCard overflow-x-hidden">
       {AboutCardData &&
         AboutCardData.map((item) => {
           const motion =

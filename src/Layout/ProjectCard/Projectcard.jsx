@@ -7,7 +7,7 @@ const Projectcard = ({ data }) => {
     AOS.init({ duration: 1000 });
   }, []);
   return (
-    <div className="project_card_main_ux_game">
+    <div className="project_card_main_ux_game !overflow-x-hidden">
       <div className="project_card_ux_game">
         {data &&
           data.map((item, index) => {

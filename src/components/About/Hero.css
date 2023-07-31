@@ -235,6 +235,13 @@
   .facts_numbring h2 {
     font-size: 40px;
   }
+  .Hero_section h2 {
+    width: 100% !important;
+    font-size: 60px;
+  }
+  .Hero_section p {
+    width: 100% !important;
+  }
 }
 @media (max-width: 450px) {
   .Hero_section {

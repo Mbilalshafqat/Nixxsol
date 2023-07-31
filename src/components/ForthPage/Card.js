@@ -4,12 +4,12 @@ import "./PortfolioCard.css";
 const Card = ({ data }) => {
   console.log(data);
   return (
-    <div className="portfolio">
+    <div className="portfolio !overflow-x-hidden">
       <div className="portfolio_child">
         {data &&
           data.map((item, index) => {
             return (
-              <div className="portfolio_child_box">
+              <div className="portfolio_child_box !overflow-x-hidden">
                 <img src={item?.img} alt="" />
                 <div className="portfolio_child_box_content">
                   <h2>{item.title && item.title}</h2>
